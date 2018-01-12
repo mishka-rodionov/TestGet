@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="TestGet">
+    <output-path>$PROJECT_DIR$/out/artifacts/TestGet</output-path>
+    <root id="archive" name="TestGet.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TestGet" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="org.apache.tomcat:tomcat-servlet-api:9.0.0.M18" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
