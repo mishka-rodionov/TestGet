@@ -1,19 +1,18 @@
 <component name="ArtifactManager">
-  <artifact type="war" build-on-make="true" name="TestGet">
-    <output-path>$PROJECT_DIR$/out/artifacts/TestGet</output-path>
-    <root id="archive" name="TestGet.war">
+  <artifact type="exploded-war" name="TestGet:war exploded">
+    <output-path>$PROJECT_DIR$/target/ArtifactID</output-path>
+    <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="TestGet" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="application" name="org.apache.tomcat:tomcat-servlet-api:9.0.0.M18" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:3.0-alpha-1" />
           <element id="library" level="project" name="Maven: org.mortbay.jetty:servlet-api-2.5:6.1.5" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/ArtifactID/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="TestGet/web/Web" />
     </root>

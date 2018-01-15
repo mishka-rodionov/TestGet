@@ -1,3 +1,4 @@
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,19 +12,12 @@ import java.io.PrintWriter;
 public class MainClass extends HttpServlet {
     public void doGet (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // устанавливает заголовок "content-type"
-        // прежде сем получить доступ к Writer
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+        String name = request.getParameter("name");
 
-        // затем пишем ответ
         out.println("<html>" + "<head><title>Book Description</title></head>");
-
-        //берем идентификатор требуемой книги
-        String bookId = request.getParameter("bookId");
-        if (bookId != null) {
-            // печатаем информацию о книге
-        }
+        out.println("<body> Hello my servlets!" + name);
         out.println("</body></html>");
         out.close();
     }
