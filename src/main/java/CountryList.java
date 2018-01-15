@@ -1,6 +1,23 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 public class CountryList {
 
-    public static String getCountry(int index){return countryList[index];}
+    public static String getCountry(int index){return country.get(index);}
+
+    public static void loading(int size){
+        country = new ArrayList<String>(size*size);
+        for (int i = 0; i < size*size; i++) {
+            country.add(i, countryList[i]);
+        }
+    }
+
+    public static void shuffle(){
+        Collections.shuffle(country);
+    }
+
+    private static ArrayList<String> country;
 
     private static String[] countryList = {
             "Albania",
@@ -54,4 +71,5 @@ public class CountryList {
             "Ukraine",
             "United Kingdom",
             "Vatican"};
+
 }
