@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Random;
 
 public class CountryList {
 
@@ -8,8 +8,17 @@ public class CountryList {
 
     public static void loading(int size){
         country = new ArrayList<String>(size*size);
+        Random rnd = new Random();
+        int index = rnd.nextInt(countryList.length);
         for (int i = 0; i < size*size; i++) {
-            country.add(i, countryList[i]);
+            if(i % 2 != 0){
+                country.add(i, countryList[index]);
+                index++;
+                if(index == countryList.length)
+                    index = 0;
+            }
+            else
+                country.add(i, countryList[index]);
         }
     }
 
