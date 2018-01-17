@@ -24,6 +24,15 @@ public class BattleField {
         }
     }
 
+    public static int addBattleField(BattleField battleField){
+        battleFields.add(battleField);
+        return battleFields.indexOf(battleField);
+    }
+
+    public static BattleField getBattleField(int index){
+        return battleFields.get(index);
+    }
+
     public String getElement(int firstIndex, int secondIndex){
         return field.get(firstIndex).get(secondIndex);
     }
@@ -32,4 +41,5 @@ public class BattleField {
     private final int size8 = 8;
     private String[][] field6x6 = new String[size6][size6];
     private ArrayList<ArrayList<String>> field;
+    private static ArrayList<BattleField> battleFields = new ArrayList<BattleField>();
 }

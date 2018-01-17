@@ -11,8 +11,21 @@
         <servlet-name>MainClassServlet</servlet-name>
         <servlet-class>MainClass</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>MainClassServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetElementServlet</servlet-name>
+        <servlet-class>GetElementServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetElementServlet</servlet-name>
+        <url-pattern>/getElement</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
