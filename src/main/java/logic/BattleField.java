@@ -7,7 +7,7 @@ public class BattleField {
 
     public BattleField(){}
 
-    public BattleField(int size, PrintWriter out){
+    public BattleField(int size){
         field = new ArrayList<ArrayList<String>>(size);
         int index = 0;
         CountryList.loading(size);
@@ -21,8 +21,8 @@ public class BattleField {
                 }
             }
         }catch (IndexOutOfBoundsException e){
-            e.printStackTrace(out);
-            out.println();
+            e.printStackTrace();
+//            out.println();
         }
     }
 

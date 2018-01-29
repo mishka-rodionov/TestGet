@@ -7,9 +7,10 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          id="WebApp_ID" version="3.1">
     <display-name>Archetype Created Web Application</display-name>
+
     <servlet>
         <servlet-name>MainClassServlet</servlet-name>
-        <servlet-class>MainClass</servlet-class>
+        <servlet-class>servlet.MainClass</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -19,12 +20,22 @@
 
     <servlet>
         <servlet-name>GetElementServlet</servlet-name>
-        <servlet-class>GetElementServlet</servlet-class>
+        <servlet-class>servlet.GetElementServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>GetElementServlet</servlet-name>
         <url-pattern>/getElement</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RoomServlet</servlet-name>
+        <servlet-class>servlet.CreateRoomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RoomServlet</servlet-name>
+        <url-pattern>/createRoom</url-pattern>
     </servlet-mapping>
 
 

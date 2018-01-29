@@ -30,12 +30,12 @@
 
     <servlet>
         <servlet-name>RoomServlet</servlet-name>
-        <servlet-class>servlet.RoomServlet</servlet-class>
+        <servlet-class>servlet.CreateRoomServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>RoomServlet</servlet-name>
-        <url-pattern>/room</url-pattern>
+        <url-pattern>/createRoom</url-pattern>
     </servlet-mapping>
 
 
