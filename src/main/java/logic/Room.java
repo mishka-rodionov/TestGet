@@ -11,6 +11,7 @@ public class Room {
     public Room(String firstPlayer, int battleFieldIndex){
         this.firstPlayer = firstPlayer;
         this.battleFieldIndex = battleFieldIndex;
+        this.changeSecondPlayer = false;
     }
 
     public String getFirstPlayer() {
@@ -27,6 +28,7 @@ public class Room {
 
     public void setSecondPlayer(String secondPlayer) {
         this.secondPlayer = secondPlayer;
+        this.changeSecondPlayer = true;
     }
 
     public String getFirstPlayerAddress() {
@@ -60,12 +62,30 @@ public class Room {
         return roomNameList.keySet();
     }
 
+    public static int addRoom(Room room){
+        rooms.add(room);
+        return rooms.indexOf(room);
+    }
+
+    public static Room getRoom(int index){
+        return rooms.get(index);
+    }
+
+    public boolean isChangeSecondPlayer() {
+        return changeSecondPlayer;
+    }
+
+    public void setChangeSecondPlayer(boolean changeSecondPlayer) {
+        this.changeSecondPlayer = changeSecondPlayer;
+    }
+
     private String firstPlayer;
     private String secondPlayer;
     private String firstPlayerAddress;
     private String secondPlayerAddress;
     private String roomName;
     private int battleFieldIndex;
+    private boolean changeSecondPlayer;
     private static HashMap<String, Integer> roomNameList = new HashMap<String, Integer>();
     private static ArrayList<Room> rooms = new ArrayList<Room>();
 }

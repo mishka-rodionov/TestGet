@@ -38,5 +38,14 @@
         <url-pattern>/createRoom</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GetElementRoomServlet</servlet-name>
+        <servlet-class>servlet.GetElementRoomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetElementRoomServlet</servlet-name>
+        <url-pattern>/getElementRoom</url-pattern>
+    </servlet-mapping>
 
 </web-app>
