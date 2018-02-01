@@ -12,6 +12,8 @@ public class Room {
         this.firstPlayer = firstPlayer;
         this.battleFieldIndex = battleFieldIndex;
         this.changeSecondPlayer = false;
+        this.stepCount = 0;
+        this.firstPlayerStep = true;
     }
 
     public String getFirstPlayer() {
@@ -79,10 +81,68 @@ public class Room {
         this.changeSecondPlayer = changeSecondPlayer;
     }
 
+    public int getRowIndex() {
+        return rowIndex;
+    }
+
+    public void setRowIndex(int rowIndex) {
+        this.rowIndex = rowIndex;
+    }
+
+    public int getColumnIndex() {
+        return columnIndex;
+    }
+
+    public void setColumnIndex(int columnIndex) {
+        this.columnIndex = columnIndex;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public boolean isFirstPlayerStep() {
+        return firstPlayerStep;
+    }
+
+    public void setFirstPlayerStep(boolean firstPlayerStep) {
+        this.firstPlayerStep = firstPlayerStep;
+    }
+
+    public boolean isSecondPlayerStep() {
+        return secondPlayerStep;
+    }
+
+    public void setSecondPlayerStep(boolean secondPlayerStep) {
+        this.secondPlayerStep = secondPlayerStep;
+    }
+
+    public int getStepCount() {
+        return stepCount;
+    }
+
+    public void addStepCount() {
+        this.stepCount++;
+    }
+
+    public void resetStepCount(){
+        stepCount = 0;
+    }
+
     private String firstPlayer;
     private String secondPlayer;
     private String firstPlayerAddress;
     private String secondPlayerAddress;
+    private int rowIndex;
+    private int columnIndex;
+    private String country;
+    private boolean firstPlayerStep;
+    private boolean secondPlayerStep;
+    private int stepCount;
     private String roomName;
     private int battleFieldIndex;
     private boolean changeSecondPlayer;

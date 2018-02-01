@@ -21,7 +21,7 @@ public class CreateRoomServlet extends HttpServlet{
         Room room = new Room(roomaName, BattleField.addBattleField(battleField));
         int roomIndex = Room.addRoom(room);
 //        Room.setElement(roomaName, BattleField.addBattleField(battleField));
-        String resp = "" + room;
+        String resp = "" + roomIndex;
 //        Set<String> keys = Room.getElement();
 //        for (Iterator<String> k = keys.iterator(); k.hasNext();) {
 //            resp += k.next() + " ";

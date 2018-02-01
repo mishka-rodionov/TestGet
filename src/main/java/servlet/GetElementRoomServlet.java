@@ -15,8 +15,33 @@ public class GetElementRoomServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int rowIndex = Integer.parseInt(req.getParameter("rowIndex"));                              // Индекс строки передаваемый в get-запросе
         int columnIndex = Integer.parseInt(req.getParameter("columnIndex"));                        // Индекс столбца передаваемый в get-запросе
-        int roomIndex = Integer.parseInt(req.getParameter("roomIndex"));              // Индекс
-        String country = BattleField.getBattleField(Room.getRoom(roomIndex).getBattleFieldIndex()).getElement(rowIndex, columnIndex);
+        int roomIndex = Integer.parseInt(req.getParameter("roomIndex"));                            // Индекс
+        String player= req.getParameter("player");
+        Room room = Room.getRoom(roomIndex);
+        String country = BattleField.getBattleField(room.getBattleFieldIndex()).getElement(rowIndex, columnIndex);
+        if(player.equals(room.getFirstPlayer())){
+            room.setRowIndex(rowIndex);
+            room.setColumnIndex(columnIndex);
+            room.setCountry(country);
+            room.addStepCount();
+            if(room.getStepCount() < 2){
+                room.setFirstPlayerStep(true);
+            }else {
+                room.setFirstPlayerStep(false);
+                room.resetStepCount();
+            }
+        }else if(player.equals(room.getSecondPlayer())){
+            room.setRowIndex(rowIndex);
+            room.setColumnIndex(columnIndex);
+            room.setCountry(country);
+            room.addStepCount();
+            if(room.getStepCount() < 2){
+                room.setSecondPlayerStep(true);
+            }else {
+                room.setSecondPlayerStep(false);
+                room.resetStepCount();
+            }
+        }
         PrintWriter respOut = resp.getWriter();
         resp.setContentType("text/html");
         req.getRequestURL();
