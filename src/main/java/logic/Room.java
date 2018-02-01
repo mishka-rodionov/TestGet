@@ -73,6 +73,8 @@ public class Room {
         return rooms.get(index);
     }
 
+    public static int getSize() { return rooms.size(); }
+
     public boolean isChangeSecondPlayer() {
         return changeSecondPlayer;
     }
