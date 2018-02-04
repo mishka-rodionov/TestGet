@@ -14,6 +14,7 @@ public class Room {
         this.changeSecondPlayer = false;
         this.stepCount = 0;
         this.firstPlayerStep = true;
+        this.country = "dummy";
     }
 
     public String getFirstPlayer() {
