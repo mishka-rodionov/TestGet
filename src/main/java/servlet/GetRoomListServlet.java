@@ -13,7 +13,7 @@ public class GetRoomListServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String request = "";
-        for (int i = 0; i < Room.getSize(); i++) {
+        for (int i = 0; i < Room.getRoomsSize(); i++) {
             request += Room.getRoom(i).getFirstPlayer() + " " + i + " ";
         }
         resp.setContentType("text/html");
