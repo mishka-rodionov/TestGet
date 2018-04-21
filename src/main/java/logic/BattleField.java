@@ -15,7 +15,19 @@ public class BattleField {
     }
 
     public static int addBattleField(BattleField battleField){
-        battleFields.add(battleField);
+        Boolean emptySpace = false;
+        for (int i = 0; i < battleFields.size(); i++) {
+            if (battleFields.get(i) == null){
+                battleFields.add(i, battleField);
+                break;
+            }
+            if (i == (battleFields.size() - 1)){
+                emptySpace = true;
+            }
+        }
+        if (emptySpace){
+            battleFields.add(battleField);
+        }
         return battleFields.indexOf(battleField);
     }
 
@@ -31,9 +43,6 @@ public class BattleField {
         return country.get(index);
     }
 
-    private final int size6 = 6;
-    private final int size8 = 8;
-    private String[][] field6x6 = new String[size6][size6];
     private ArrayList<ArrayList<String>> field;
     private ArrayList<String> country;
     private static ArrayList<BattleField> battleFields = new ArrayList<BattleField>();

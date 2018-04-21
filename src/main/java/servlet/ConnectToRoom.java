@@ -13,9 +13,10 @@ import java.io.PrintWriter;
 /**
  * Created by Lab1 on 12.01.2018.
  */
-public class MainClass extends HttpServlet {
+public class ConnectToRoom extends HttpServlet {
     public void doGet (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        noRoom = false;
         response.setContentType("text/html");                                 //Установка MIME типа ответа на GET запрос
         PrintWriter out = response.getWriter();                               //Получение потока, куда писать ответ
 
@@ -27,21 +28,39 @@ public class MainClass extends HttpServlet {
         for (int i = 0; i < Room.getRoomsSize(); i++) {
             if(Room.getRoom(i).getBattleFieldSize() == size){
                 Room.getRoom(i).setSecondPlayer(playerName);
-                Room.getRoom(i).setSecondUser(user);
+                Room.getRoom(i).setSecondPlayerUsername(user);
                 Room.getRoom(i).setSecondPlayerOrigin(origin);
+                break;
             }
-
+            if (i == (Room.getRoomsSize() - 1)){
+                noRoom = true;
+            }
         }
 
-        BattleField battleField = new BattleField(size);                      //Конструирование поля для игры
-        int indexBattleField = BattleField.addBattleField(battleField);       //Добавление игрового поля в контейнер игровых полей.
-        out.print(indexBattleField);                                          //Возвращение индекса игрового поля из контейнера игровых полей
+        if (noRoom){
+            Room room = new Room(playerName, size, origin, user);
+            roomIndex = Room.addRoom(room);
+        }
+
+        answer = "" + roomIndex + " ";
+        for (int i = 0; i < size; i++) {
+            answer += i + " " + Room.getRoom(roomIndex).getBattleField().getElement(i) + " ";
+        }
+
+//        BattleField battleField = new BattleField(size);                      //Конструирование поля для игры
+//        int indexBattleField = BattleField.addBattleField(battleField);       //Добавление игрового поля в контейнер игровых полей.
+        out.print(answer);                                          //Возвращение индекса игрового поля из контейнера игровых полей
         out.close();
     }
 
     private String playerName;
     private String user;
     private String origin;
+    private String answer;
+
     private Integer size;
+    private Integer roomIndex;
+
+    private Boolean noRoom;
 
 }
