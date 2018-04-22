@@ -18,7 +18,8 @@ public class CreateRoomServlet extends HttpServlet{
         String roomaName = req.getParameter("roomName");
         int battleFieldSize = Integer.parseInt(req.getParameter("battleFieldSize"));
         BattleField battleField = new BattleField(battleFieldSize);
-        Room room = new Room(roomaName, BattleField.addBattleField(battleField));
+//        Room room = new Room(roomaName, BattleField.addBattleField(battleField));
+        Room room = new Room();
         int roomIndex = Room.addRoom(room);
 //        Room.setElement(roomaName, BattleField.addBattleField(battleField));
         String resp = "" + roomIndex;
