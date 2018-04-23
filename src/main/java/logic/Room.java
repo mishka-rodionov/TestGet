@@ -19,6 +19,7 @@ public class Room {
 
         this.battleField = new BattleField(battleFieldSize);
         this.battleFieldIndex = BattleField.addBattleField(battleField);
+        this.steps = new ArrayList<Integer>();
 
         this.country = "dummy";
     }
@@ -29,7 +30,7 @@ public class Room {
         return firstPlayer;
     }
 
-    public static Integer getStepsSize(){
+    public Integer getStepsSize(){
         return steps.size();
     }
 
@@ -238,9 +239,11 @@ public class Room {
         rooms.remove(index);
     }
 
-    public static void addStep(int index){
+    public void addStep(int index){
         steps.add(index);
     }
+
+    public void clearSteps(){ steps.clear(); }
 
     public void resetStepCount(){
         stepCount = 0;
@@ -273,5 +276,5 @@ public class Room {
 
     private static HashMap<String, Integer> roomNameList = new HashMap<String, Integer>();
     private static List<Room> rooms = new ArrayList<Room>();
-    private static List<Integer> steps = new ArrayList<Integer>();
+    private List<Integer> steps;
 }

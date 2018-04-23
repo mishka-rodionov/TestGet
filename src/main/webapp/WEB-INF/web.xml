@@ -48,15 +48,15 @@
         <url-pattern>/getElementRoom</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>ConnectToRoomServlet</servlet-name>-->
-        <!--<servlet-class>servlet.ConnectToRoomServlet</servlet-class>-->
-    <!--</servlet>-->
+    <servlet>
+        <servlet-name>ActivePlayerServlet</servlet-name>
+        <servlet-class>servlet.ActivePlayerServlet/servlet-class>
+    </servlet>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>ConnectToRoomServlet</servlet-name>-->
-        <!--<url-pattern>/connectToRoom</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>ActivePlayerServlet</servlet-name>
+        <url-pattern>/activePlayer</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>WaitSecondPlayerServlet</servlet-name>
