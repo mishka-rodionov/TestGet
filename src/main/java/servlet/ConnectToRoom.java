@@ -1,6 +1,5 @@
 package servlet;
 
-import logic.BattleField;
 import logic.Room;
 
 import javax.servlet.ServletException;
@@ -24,27 +23,40 @@ public class ConnectToRoom extends HttpServlet {
         user = request.getParameter("user");
         origin = request.getParameter("origin");
         size = Integer.parseInt(request.getParameter("size"));
+        answer = new String();
+//        answer += "room size is " + Room.getRoomsSize() + "! ";
 
-        for (int i = 0; i < Room.getRoomsSize(); i++) {
-            if(Room.getRoom(i).getBattleFieldSize() == size){
-                Room.getRoom(i).setSecondPlayer(playerName);
-                Room.getRoom(i).setSecondPlayerUsername(user);
-                Room.getRoom(i).setSecondPlayerOrigin(origin);
-                break;
+        if (Room.getRoomsSize() > 0) {
+            for (int i = 0; i < Room.getRoomsSize(); i++) {
+                if (Room.getRoom(i).getBattleFieldSize() == size &&
+                        Room.getRoom(i).getSecondPlayer() == null) {
+                    Room.getRoom(i).setSecondPlayer(playerName);
+                    Room.getRoom(i).setSecondPlayerUsername(user);
+                    Room.getRoom(i).setSecondPlayerOrigin(origin);
+                    roomIndex = i;
+//                    answer += "in for ";
+                    break;
+                }
+                if (i == (Room.getRoomsSize() - 1)) {
+                    noRoom = true;
+                }
             }
-            if (i == (Room.getRoomsSize() - 1)){
-                noRoom = true;
-            }
+        }else{
+            Room room = new Room(playerName, size, origin, user);
+            roomIndex = Room.addRoom(room);
+//            answer += "in noRoom ";
         }
 
         if (noRoom){
             Room room = new Room(playerName, size, origin, user);
             roomIndex = Room.addRoom(room);
+//            answer += "in noRoom ";
         }
 
-        answer = "" + roomIndex + " ";
+        answer += roomIndex + " ";
         for (int i = 0; i < size; i++) {
-            answer += i + " " + Room.getRoom(roomIndex).getBattleField().getElement(i) + " ";
+            answer += i + " ";
+            answer += Room.getRoom(roomIndex).getBattleField().getElement(i) + " ";
         }
 
 //        BattleField battleField = new BattleField(size);                      //Конструирование поля для игры

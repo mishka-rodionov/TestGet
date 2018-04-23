@@ -12,6 +12,7 @@ public class Room {
     public Room(String firstPlayer, int battleFieldSize, String firstPlayerOrigin,
                 String firstPlayerUsername){
         this.firstPlayer = firstPlayer;
+        this.secondPlayer = null;
         this.battleFieldSize = battleFieldSize;
         this.firstPlayerOrigin = firstPlayerOrigin;
         this.firstPlayerUsername = firstPlayerUsername;
@@ -212,18 +213,24 @@ public class Room {
 
     public static int addRoom(Room room){
         Boolean emptySpace = false;
-        for (int i = 0; i < rooms.size(); i++) {
-            if (rooms.get(i) == null){
-                rooms.add(i, room);
-                break;
+        if (rooms.size() > 0){
+            for (int i = 0; i < rooms.size(); i++) {
+                if (rooms.get(i) == null){
+                    rooms.add(i, room);
+                    break;
+                }
+                if (i == (rooms.size() - 1)){
+                    emptySpace = true;
+                }
             }
-            if (i == (rooms.size() - 1)){
-                emptySpace = true;
-            }
+        }else{
+            rooms.add(room);
         }
+
         if (emptySpace){
             rooms.add(room);
         }
+
         return rooms.indexOf(room);
     }
 
