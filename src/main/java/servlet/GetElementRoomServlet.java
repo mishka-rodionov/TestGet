@@ -25,9 +25,9 @@ public class GetElementRoomServlet extends HttpServlet{
             room.setCountry(country);
             room.addStepCount();
             if(room.getStepCount() < 2){
-                room.setFirstPlayerStep(true);
+                room.setFirstPlayerActive(true);
             }else {
-                room.setFirstPlayerStep(false);
+                room.setFirstPlayerActive(false);
                 room.resetStepCount();
             }
         }else if(player.equals(room.getSecondPlayer())){
@@ -36,9 +36,9 @@ public class GetElementRoomServlet extends HttpServlet{
             room.setCountry(country);
             room.addStepCount();
             if(room.getStepCount() < 2){
-                room.setSecondPlayerStep(true);
+                room.setSecondPlayerActive(true);
             }else {
-                room.setSecondPlayerStep(false);
+                room.setSecondPlayerActive(false);
                 room.resetStepCount();
             }
         }

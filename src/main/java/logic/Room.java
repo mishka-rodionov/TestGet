@@ -16,6 +16,7 @@ public class Room {
         this.battleFieldSize = battleFieldSize;
         this.firstPlayerOrigin = firstPlayerOrigin;
         this.firstPlayerUsername = firstPlayerUsername;
+        this.readFlag = false;
 
         this.battleField = new BattleField(battleFieldSize);
         this.battleFieldIndex = BattleField.addBattleField(battleField);
@@ -104,37 +105,44 @@ public class Room {
         return playerSend;
     }
 
-    public boolean isPlayerRead() {
-        return playerRead;
+    public boolean isReadFlag() {
+        return readFlag;
     }
 
-    public boolean isFirstPlayerStep() {
-        return firstPlayerStep;
+    public boolean isFirstPlayerActive() {
+        return firstPlayerActive;
     }
 
-    public boolean isSecondPlayerStep() {
-        return secondPlayerStep;
+    public boolean isSecondPlayerActive() {
+        return secondPlayerActive;
     }
 
     public boolean isChangeSecondPlayer() {
         return changeSecondPlayer;
     }
 
+    public boolean isMistake() {
+        return mistake;
+    }
+
+    public Integer getValue(int index){
+        return steps.get(index);
+    }
 
     //endregion
 
     //region setters
 
-    public void setSecondPlayerStep(boolean secondPlayerStep) {
-        this.secondPlayerStep = secondPlayerStep;
+    public void setSecondPlayerActive(boolean secondPlayerActive) {
+        this.secondPlayerActive = secondPlayerActive;
     }
 
     public void setPlayerSend(boolean playerSend) {
         this.playerSend = playerSend;
     }
 
-    public void setPlayerRead(boolean playerRead) {
-        this.playerRead = playerRead;
+    public void setReadFlag(boolean readFlag) {
+        this.readFlag = readFlag;
     }
 
     public void setBattleField(BattleField battleField) {
@@ -161,8 +169,8 @@ public class Room {
         this.battleFieldSize = battleFieldSize;
     }
 
-    public void setFirstPlayerStep(boolean firstPlayerStep) {
-        this.firstPlayerStep = firstPlayerStep;
+    public void setFirstPlayerActive(boolean firstPlayerActive) {
+        this.firstPlayerActive = firstPlayerActive;
     }
 
     public void setChangeSecondPlayer(boolean changeSecondPlayer) {
@@ -204,6 +212,10 @@ public class Room {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public void setMistake(boolean mistake) {
+        this.mistake = mistake;
     }
 
     //endregion
@@ -249,6 +261,7 @@ public class Room {
         stepCount = 0;
     }
 
+
     private String firstPlayer;
     private String firstPlayerUsername;
     private String secondPlayer;
@@ -260,11 +273,12 @@ public class Room {
     private String secondPlayerOrigin;
     private String roomName;
 
-    private boolean firstPlayerStep;
-    private boolean secondPlayerStep;
+    private boolean firstPlayerActive;
+    private boolean secondPlayerActive;
     private boolean changeSecondPlayer;
     private boolean playerSend;
-    private boolean playerRead;
+    private boolean readFlag;
+    private boolean mistake;
 
     private int stepCount;
     private int rowIndex;

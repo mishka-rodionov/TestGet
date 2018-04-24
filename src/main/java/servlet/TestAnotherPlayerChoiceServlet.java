@@ -17,13 +17,13 @@ public class TestAnotherPlayerChoiceServlet extends HttpServlet {
         Room room = Room.getRoom(roomIndex);
         String res = "";
         if (room.getFirstPlayer().equals(player)){
-            if(room.isSecondPlayerStep()){
+            if(room.isSecondPlayerActive()){
                 res = "stop" + " " + room.getRowIndex() + " " + room.getColumnIndex() + " " + room.getCountry();
             }else{
                 res = "start" + " " + room.getRowIndex() + " " + room.getColumnIndex() + " " + room.getCountry();
             }
         }else if (room.getSecondPlayer().equals(player)){
-            if(room.isFirstPlayerStep()){
+            if(room.isFirstPlayerActive()){
                 res = "stop" + " " + room.getRowIndex() + " " + room.getColumnIndex() + " " + room.getCountry();
             }else{
                 res = "start" + " " + room.getRowIndex() + " " + room.getColumnIndex() + " " + room.getCountry();

@@ -1,5 +1,6 @@
 package servlet;
 
+import logic.Data;
 import logic.Room;
 
 import javax.servlet.ServletException;
@@ -19,10 +20,10 @@ public class ConnectToRoom extends HttpServlet {
         response.setContentType("text/html");                                 //Установка MIME типа ответа на GET запрос
         PrintWriter out = response.getWriter();                               //Получение потока, куда писать ответ
 
-        playerName = request.getParameter("playerName");
-        user = request.getParameter("user");
-        origin = request.getParameter("origin");
-        size = Integer.parseInt(request.getParameter("size"));
+        playerName = request.getParameter(Data.getPlayerNameLabel());
+        user = request.getParameter(Data.getUsernameLabel());
+        origin = request.getParameter(Data.getOriginLabel());
+        size = Integer.parseInt(request.getParameter(Data.getSizeLabel()));
         answer = new String();
 //        answer += "room size is " + Room.getRoomsSize() + "! ";
 
@@ -34,6 +35,7 @@ public class ConnectToRoom extends HttpServlet {
                     Room.getRoom(i).setSecondPlayerUsername(user);
                     Room.getRoom(i).setSecondPlayerOrigin(origin);
                     roomIndex = i;
+                    playerNumber = Data.getSecondPlayerNumber();
 //                    answer += "in for ";
                     break;
                 }
@@ -44,16 +46,18 @@ public class ConnectToRoom extends HttpServlet {
         }else{
             Room room = new Room(playerName, size, origin, user);
             roomIndex = Room.addRoom(room);
+            playerNumber = Data.getFirstPlayerNumber();
 //            answer += "in noRoom ";
         }
 
         if (noRoom){
             Room room = new Room(playerName, size, origin, user);
             roomIndex = Room.addRoom(room);
+            playerNumber = Data.getFirstPlayerNumber();
 //            answer += "in noRoom ";
         }
 
-        answer += roomIndex + " ";
+        answer += roomIndex + " " + playerNumber + " ";
         for (int i = 0; i < size; i++) {
             answer += i + " ";
             answer += Room.getRoom(roomIndex).getBattleField().getElement(i) + " ";
@@ -69,6 +73,7 @@ public class ConnectToRoom extends HttpServlet {
     private String user;
     private String origin;
     private String answer;
+    private String playerNumber;
 
     private Integer size;
     private Integer roomIndex;
