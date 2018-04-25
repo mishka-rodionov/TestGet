@@ -19,73 +19,75 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>GetElementServlet</servlet-name>
-        <servlet-class>servlet.GetElementServlet</servlet-class>
+        <servlet-name>WaitServlet</servlet-name>
+        <servlet-class>servlet.WaitServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>GetElementServlet</servlet-name>
-        <url-pattern>/getElement</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>CreateRoomServlet</servlet-name>
-        <servlet-class>servlet.CreateRoomServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>CreateRoomServlet</servlet-name>
-        <url-pattern>/createRoom</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>GetElementRoomServlet</servlet-name>
-        <servlet-class>servlet.GetElementRoomServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>GetElementRoomServlet</servlet-name>
-        <url-pattern>/getElementRoom</url-pattern>
+        <servlet-name>WaitServlet</servlet-name>
+        <url-pattern>/wait</url-pattern>
     </servlet-mapping>
 
     <!--<servlet>-->
-        <!--<servlet-name>ConnectToRoomServlet</servlet-name>-->
-        <!--<servlet-class>servlet.ConnectToRoomServlet</servlet-class>-->
+        <!--<servlet-name>GetElementServlet</servlet-name>-->
+        <!--<servlet-class>servlet.GetElementServlet</servlet-class>-->
     <!--</servlet>-->
 
     <!--<servlet-mapping>-->
-        <!--<servlet-name>ConnectToRoomServlet</servlet-name>-->
-        <!--<url-pattern>/connectToRoom</url-pattern>-->
+        <!--<servlet-name>GetElementServlet</servlet-name>-->
+        <!--<url-pattern>/getElement</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>GetElementRoomServlet</servlet-name>-->
+        <!--<servlet-class>servlet.GetElementRoomServlet</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>GetElementRoomServlet</servlet-name>-->
+        <!--<url-pattern>/getElementRoom</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <servlet>
-        <servlet-name>WaitSecondPlayerServlet</servlet-name>
-        <servlet-class>servlet.WaitSecondPlayerServlet</servlet-class>
+        <servlet-name>ActivePlayerServlet</servlet-name>
+        <servlet-class>servlet.ActivePlayerServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>WaitSecondPlayerServlet</servlet-name>
-        <url-pattern>/waitSecondPlayer</url-pattern>
+        <servlet-name>ActivePlayerServlet</servlet-name>
+        <url-pattern>/activePlayer</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>TestAnotherPlayerChoiceServlet</servlet-name>
-        <servlet-class>servlet.TestAnotherPlayerChoiceServlet</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>WaitSecondPlayerServlet</servlet-name>-->
+        <!--<servlet-class>servlet.WaitSecondPlayerServlet</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>TestAnotherPlayerChoiceServlet</servlet-name>
-        <url-pattern>/testAnotherPlayerChoice</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>WaitSecondPlayerServlet</servlet-name>-->
+        <!--<url-pattern>/waitSecondPlayer</url-pattern>-->
+    <!--</servlet-mapping>-->
 
-    <servlet>
-        <servlet-name>GetRoomListServlet</servlet-name>
-        <servlet-class>servlet.GetRoomListServlet</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>TestAnotherPlayerChoiceServlet</servlet-name>-->
+        <!--<servlet-class>servlet.TestAnotherPlayerChoiceServlet</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>GetRoomListServlet</servlet-name>
-        <url-pattern>/getRoomList</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>TestAnotherPlayerChoiceServlet</servlet-name>-->
+        <!--<url-pattern>/testAnotherPlayerChoice</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>GetRoomListServlet</servlet-name>-->
+        <!--<servlet-class>servlet.GetRoomListServlet</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>GetRoomListServlet</servlet-name>-->
+        <!--<url-pattern>/getRoomList</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 </web-app>

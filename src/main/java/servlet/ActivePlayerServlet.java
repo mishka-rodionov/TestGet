@@ -33,9 +33,19 @@ public class ActivePlayerServlet extends HttpServlet {
         }
 
         if (Room.getRoom(roomIndex).getStepsSize() == 2 && Room.getRoom(roomIndex).isMistake()){
-            answer = "false";
+            Room.getRoom(roomIndex).setFirstPlayerActive(!Room.getRoom(roomIndex).isFirstPlayerActive());
+            Room.getRoom(roomIndex).setSecondPlayerActive(!Room.getRoom(roomIndex).isSecondPlayerActive());
+            if (activePlayer.equals(Data.getFirstPlayerNumber())){
+                answer = Boolean.toString(Room.getRoom(roomIndex).isFirstPlayerActive());
+            }else{
+                answer = Boolean.toString(Room.getRoom(roomIndex).isSecondPlayerActive());
+            }
         }else{
-            answer = "true";
+            if (activePlayer.equals(Data.getFirstPlayerNumber())){
+                answer = Boolean.toString(Room.getRoom(roomIndex).isFirstPlayerActive());
+            }else{
+                answer = Boolean.toString(Room.getRoom(roomIndex).isSecondPlayerActive());
+            }
         }
 
         out.print(answer);

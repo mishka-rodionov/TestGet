@@ -6,8 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import logic.BattleField;
-import logic.Room;
 
 
 public class GetElementServlet extends HttpServlet{
@@ -18,10 +16,10 @@ public class GetElementServlet extends HttpServlet{
         elementIndex = Integer.parseInt(req.getParameter("elementIndex"));                        // Индекс столбца передаваемый в get-запросе
         playerName = req.getParameter("playerName");
 
-        Room.addStep(elementIndex);
-        if (Room.getStepsSize() == 2){
-            Room.getRoom(roomIndex).setPlayerSend(true);
-        }
+//        Room.addStep(elementIndex);
+//        if (Room.getStepsSize() == 2){
+//            Room.getRoom(roomIndex).setPlayerSend(true);
+//        }
 
         PrintWriter respOut = resp.getWriter();
         resp.setContentType("text/html");
