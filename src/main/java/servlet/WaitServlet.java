@@ -17,8 +17,15 @@ public class WaitServlet extends HttpServlet{
         PrintWriter out = response.getWriter();                                             //Получение потока, куда писать ответ
 
         roomIndex = Integer.parseInt(req.getParameter(Data.getRoomIndexLabel()));
+
         activePlayer = req.getParameter(Data.getActivePlayerLabel());               //игрок ожидающий своего хода
-        answer = "";
+        answer = "remote host " + req.getRemoteHost() + "\n ";
+        answer += "path info " + req.getPathInfo() + "\n ";
+        answer += "path translated " + req.getPathTranslated() + "\n ";
+        answer += "context path " + req.getContextPath() + "\n ";
+        answer += "servlet path " + req.getServletPath() + "\n ";
+
+
 
         if (activePlayer.equals(Room.getRoom(roomIndex).getFirstPlayer())){
             createAnswer();

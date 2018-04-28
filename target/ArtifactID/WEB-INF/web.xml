@@ -28,6 +28,16 @@
         <url-pattern>/wait</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>TestInteraction</servlet-name>
+        <servlet-class>servlet.TestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestInteraction</servlet-name>
+        <url-pattern>/testServlet</url-pattern>
+    </servlet-mapping>
+
     <!--<servlet>-->
         <!--<servlet-name>GetElementServlet</servlet-name>-->
         <!--<servlet-class>servlet.GetElementServlet</servlet-class>-->
