@@ -18,6 +18,11 @@ public class Room {
         this.firstPlayerUsername = firstPlayerUsername;
         this.readFlag = false;
 
+        this.sendStart = true;
+        this.sendFinish = false;
+        this.readStart = false;
+        this.readFinish = false;
+
         this.battleField = new BattleField(battleFieldSize);
         this.battleFieldIndex = BattleField.addBattleField(battleField);
         this.steps = new ArrayList<Integer>();
@@ -129,6 +134,22 @@ public class Room {
         return steps.get(index);
     }
 
+    public Boolean getSendStart() {
+        return sendStart;
+    }
+
+    public Boolean getSendFinish() {
+        return sendFinish;
+    }
+
+    public Boolean getReadStart() {
+        return readStart;
+    }
+
+    public Boolean getReadFinish() {
+        return readFinish;
+    }
+
     //endregion
 
     //region setters
@@ -218,6 +239,22 @@ public class Room {
         this.mistake = mistake;
     }
 
+    public void setSendStart(Boolean sendStart) {
+        this.sendStart = sendStart;
+    }
+
+    public void setSendFinish(Boolean sendFinish) {
+        this.sendFinish = sendFinish;
+    }
+
+    public void setReadStart(Boolean readStart) {
+        this.readStart = readStart;
+    }
+
+    public void setReadFinish(Boolean readFinish) {
+        this.readFinish = readFinish;
+    }
+
     //endregion
 
     public void addStepCount() {
@@ -262,6 +299,9 @@ public class Room {
     }
 
 
+
+
+
     private String firstPlayer;
     private String firstPlayerUsername;
     private String secondPlayer;
@@ -279,6 +319,11 @@ public class Room {
     private boolean playerSend;
     private boolean readFlag;
     private boolean mistake;
+
+    private Boolean sendStart;
+    private Boolean sendFinish;
+    private Boolean readStart;
+    private Boolean readFinish;
 
     private int stepCount;
     private int rowIndex;

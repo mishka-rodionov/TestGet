@@ -44,6 +44,30 @@ public class Data {
         return mistakeLabel;
     }
 
+    public static String getSendStart() {
+        return sendStart;
+    }
+
+    public static String getSendFinish() {
+        return sendFinish;
+    }
+
+    public static String getReadStart() {
+        return readStart;
+    }
+
+    public static String getReadFinish() {
+        return readFinish;
+    }
+
+    public static String getStep1() {
+        return step1;
+    }
+
+    public static String getStep2() {
+        return step2;
+    }
+
     //endregion
 
     //region setters
@@ -88,7 +112,32 @@ public class Data {
         Data.mistakeLabel = mistakeLabel;
     }
 
+    public static void setSendStart(String sendStart) {
+        Data.sendStart = sendStart;
+    }
+
+    public static void setSendFinish(String sendFinish) {
+        Data.sendFinish = sendFinish;
+    }
+
+    public static void setReadStart(String readStart) {
+        Data.readStart = readStart;
+    }
+
+    public static void setReadFinish(String readFinish) {
+        Data.readFinish = readFinish;
+    }
+
+    public static void setStep1(String step1) {
+        Data.step1 = step1;
+    }
+
+    public static void setStep2(String step2) {
+        Data.step2 = step2;
+    }
+
     //endregion
+
 
 
     private static String firstPlayerNumber = "firstPlayer";
@@ -101,5 +150,11 @@ public class Data {
     private static String activeStepLabel = "activeStep";
     private static String activePlayerLabel = "activePlayer";
     private static String mistakeLabel = "mistake";
+    private static String sendStart = "sendStart";
+    private static String sendFinish = "sendFinish";
+    private static String readStart = "readStart";
+    private static String readFinish = "readFinish";
+    private static String step1 = "step1";
+    private static String step2 = "step2";
 
 }
