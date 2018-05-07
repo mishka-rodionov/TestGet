@@ -34,7 +34,7 @@ public class WaitServlet extends HttpServlet{
         if (sendStart){
             Room.getRoom(roomIndex).addStep(step1);
             Room.getRoom(roomIndex).addStep(step2);
-            answer += "OK";
+            answer = sendStart + " " + step1 + " " + step2;
         }
 
         if (sendStart && sendFinish){
@@ -43,12 +43,14 @@ public class WaitServlet extends HttpServlet{
 
         if(readStart && (Room.getRoom(roomIndex).getStepsSize() == 2)){
             if (sendFinish){
-                answer += sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
+                answer = sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
                 Room.getRoom(roomIndex).setSendFinish(false);
             }else {
-                answer += sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
+                answer = sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
             }
             Room.getRoom(roomIndex).clearSteps();
+        }else if (readStart){
+            answer = sendFinish + " " + "-1" + " " + "-1";
         }
 
 //        if (activePlayer.equals(Room.getRoom(roomIndex).getFirstPlayer())){

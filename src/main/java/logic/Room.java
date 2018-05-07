@@ -26,6 +26,8 @@ public class Room {
         this.battleField = new BattleField(battleFieldSize);
         this.battleFieldIndex = BattleField.addBattleField(battleField);
         this.steps = new ArrayList<Integer>();
+        this.steps.add(dummy);
+        this.steps.add(dummy);
 
         this.country = "dummy";
     }
@@ -330,6 +332,7 @@ public class Room {
     private int columnIndex;
     private int battleFieldIndex;
     private int battleFieldSize;
+    private int dummy = -1;
 
     private BattleField battleField;
 
