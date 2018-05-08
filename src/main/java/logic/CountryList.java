@@ -233,7 +233,7 @@ public class CountryList {
             "Saint_Kitts and Nevis",
             "Saint_Lucia",
             "Saint_Martin",
-            "Saint_Vincent and the Grenadines",
+            "Saint_Vincent_and_the_Grenadines",
             "Samoa",
             "San_Marino",
             "Sao_Tome_and_Principe",

@@ -37,8 +37,10 @@ public class WaitServlet extends HttpServlet{
             answer = sendStart + " " + step1 + " " + step2;
         }
 
-        if (sendStart && sendFinish){
-
+        if (!sendStart && sendFinish){
+            Room.getRoom(roomIndex).addStep(step1);
+            Room.getRoom(roomIndex).addStep(step2);
+            answer = sendStart + " " + step1 + " " + step2;
         }
 
         if(readStart && (Room.getRoom(roomIndex).getStepsSize() == 2)){
@@ -52,15 +54,6 @@ public class WaitServlet extends HttpServlet{
         }else if (readStart){
             answer = sendFinish + " " + "-1" + " " + "-1";
         }
-
-//        if (activePlayer.equals(Room.getRoom(roomIndex).getFirstPlayer())){
-//            createAnswer();
-//            answer += " " + Boolean.toString(Room.getRoom(roomIndex).isFirstPlayerActive());
-//        }else if (activePlayer.equals(Room.getRoom(roomIndex).getSecondPlayer())){
-//            createAnswer();
-//            answer += " " + Boolean.toString(Room.getRoom(roomIndex).isSecondPlayerActive());
-//        }
-
 
         out.print(answer);
         out.close();

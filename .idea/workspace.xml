@@ -9,7 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0811e84b-751e-42f3-adc1-c89918a3b24b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Room.java" afterPath="$PROJECT_DIR$/src/main/java/logic/Room.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/CountryList.java" afterPath="$PROJECT_DIR$/src/main/java/logic/CountryList.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java" />
     </list>
     <ignored path="TestGet.iws" />
@@ -45,21 +45,20 @@
       <file leaf-file-name="ActivePlayerServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/ActivePlayerServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="255">
               <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WaitServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WaitServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="52" column="56" lean-forward="false" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+            <state relative-caret-position="292">
+              <caret line="42" column="59" lean-forward="false" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
               <folding>
                 <element signature="e#1279#1394#0" expanded="false" />
-                <element signature="e#2578#2655#0" expanded="false" />
                 <element signature="method#createAnswer#0;class#WaitServlet#0" expanded="false" />
               </folding>
             </state>
@@ -123,7 +122,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Room.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logic/Room.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
@@ -142,8 +141,8 @@
       <file leaf-file-name="CountryList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logic/CountryList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4658">
-              <caret line="278" column="22" lean-forward="false" selection-start-line="278" selection-start-column="22" selection-end-line="278" selection-end-column="22" />
+            <state relative-caret-position="193">
+              <caret line="235" column="35" lean-forward="false" selection-start-line="235" selection-start-column="35" selection-end-line="235" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -201,7 +200,6 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/BattleField.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/MainClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/CreateRoomServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/CountryList.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/ActivePlayerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/GetElementServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/TestInteraction.java" />
@@ -210,8 +208,9 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/TestServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/ConnectToRoom.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Data.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Room.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/CountryList.java" />
       </list>
     </option>
   </component>
@@ -264,6 +263,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,10 +329,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -738,11 +737,12 @@
       <workItem from="1524893450685" duration="7033000" />
       <workItem from="1525406548439" duration="12593000" />
       <workItem from="1525679294766" duration="4395000" />
+      <workItem from="1525752289174" duration="2755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136762000" />
+    <option name="totallyTimeSpent" value="139517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -795,7 +795,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1069,14 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/CountryList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4658">
-          <caret line="278" column="22" lean-forward="false" selection-start-line="278" selection-start-column="22" selection-end-line="278" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/GetElementServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1136,7 +1128,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/ActivePlayerServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="255">
           <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="52" />
           <folding />
         </state>
@@ -1150,18 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="52" column="56" lean-forward="false" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
-          <folding>
-            <element signature="e#1279#1394#0" expanded="false" />
-            <element signature="e#2578#2655#0" expanded="false" />
-            <element signature="method#createAnswer#0;class#WaitServlet#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/Room.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1172,6 +1152,25 @@
             <element signature="method#addRoom#0;class#Room#0" expanded="false" />
             <element signature="e#6948#6949#0" expanded="true" />
             <element signature="e#6977#6978#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/CountryList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="235" column="35" lean-forward="false" selection-start-line="235" selection-start-column="35" selection-end-line="235" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="42" column="59" lean-forward="false" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+          <folding>
+            <element signature="e#1279#1394#0" expanded="false" />
+            <element signature="method#createAnswer#0;class#WaitServlet#0" expanded="false" />
           </folding>
         </state>
       </provider>
