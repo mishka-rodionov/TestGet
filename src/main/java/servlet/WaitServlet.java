@@ -17,43 +17,58 @@ public class WaitServlet extends HttpServlet{
         PrintWriter out = response.getWriter();                                             //Получение потока, куда писать ответ
 
         roomIndex = Integer.parseInt(req.getParameter(Data.getRoomIndexLabel()));
-        step1 = Integer.parseInt(req.getParameter(Data.getStep1()));
-        step2 = Integer.parseInt(req.getParameter(Data.getStep2()));
+        type = req.getParameter(Data.getType());
+        playerName = req.getParameter(Data.getPlayerName());
 
-        sendStart = Boolean.parseBoolean(req.getParameter(Data.getSendStart()));
-        sendFinish = Boolean.parseBoolean(req.getParameter(Data.getSendFinish()));
-        readStart = Boolean.parseBoolean(req.getParameter(Data.getReadStart()));
-        readFinish = Boolean.parseBoolean(req.getParameter(Data.getReadFinish()));
-
-//        activePlayer = req.getParameter(Data.getActivePlayerLabel());               //игрок ожидающий своего хода
-//        answer = "remote host " + req.getRemoteHost() + "\n ";
-//        answer += "path info " + req.getPathInfo() + "\n ";
-//        answer += "path translated " + req.getPathTranslated() + "\n ";
-//        answer += "context path " + req.getContextPath() + "\n ";
-//        answer += "servlet path " + req.getServletPath() + "\n ";
-        if (sendStart){
-            Room.getRoom(roomIndex).addStep(step1);
-            Room.getRoom(roomIndex).addStep(step2);
-            answer = sendStart + " " + step1 + " " + step2;
+        if (type.equals(Data.getSend())){
+            step = Integer.parseInt(req.getParameter(Data.getStep()));
+            Room.getRoom(roomIndex).addStep(step);
         }
 
-        if (!sendStart && sendFinish){
-            Room.getRoom(roomIndex).addStep(step1);
-            Room.getRoom(roomIndex).addStep(step2);
-            answer = sendStart + " " + step1 + " " + step2;
-        }
+        if (type.equals(Data.getReceive())){
+            if (Room.getRoom(roomIndex).getStepsSize() < 1){
 
-        if(readStart && (Room.getRoom(roomIndex).getStepsSize() == 2)){
-            if (sendFinish){
-                answer = sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
-                Room.getRoom(roomIndex).setSendFinish(false);
-            }else {
-                answer = sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
             }
-            Room.getRoom(roomIndex).clearSteps();
-        }else if (readStart){
-            answer = sendFinish + " " + "-1" + " " + "-1";
+            if (Room.getRoom(roomIndex).getStepsSize() < 2 && Room.getRoom(roomIndex).getStepCount() == 0){
+
+                Room.getRoom(roomIndex).addStepCount();
+            }
+            if (Room.getRoom(roomIndex).getStepsSize() == 2 && Room.getRoom(roomIndex).getStepCount() == 1){
+
+                Room.getRoom(roomIndex).addStepCount();
+            }
         }
+//        step1 = Integer.parseInt(req.getParameter(Data.getStep1()));
+//        step2 = Integer.parseInt(req.getParameter(Data.getStep2()));
+
+//        sendStart = Boolean.parseBoolean(req.getParameter(Data.getSendStart()));
+//        sendFinish = Boolean.parseBoolean(req.getParameter(Data.getSendFinish()));
+//        readStart = Boolean.parseBoolean(req.getParameter(Data.getReadStart()));
+//        readFinish = Boolean.parseBoolean(req.getParameter(Data.getReadFinish()));
+
+//        if (sendStart){
+//            Room.getRoom(roomIndex).addStep(step1);
+//            Room.getRoom(roomIndex).addStep(step2);
+//            answer = sendStart + " " + step1 + " " + step2;
+//        }
+//
+//        if (!sendStart && sendFinish){
+//            Room.getRoom(roomIndex).addStep(step1);
+//            Room.getRoom(roomIndex).addStep(step2);
+//            answer = sendStart + " " + step1 + " " + step2;
+//        }
+//
+//        if(readStart && (Room.getRoom(roomIndex).getStepsSize() == 2)){
+//            if (sendFinish){
+//                answer = sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
+//                Room.getRoom(roomIndex).setSendFinish(false);
+//            }else {
+//                answer = sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
+//            }
+//            Room.getRoom(roomIndex).clearSteps();
+//        }else if (readStart){
+//            answer = sendFinish + " " + "-1" + " " + "-1";
+//        }
 
         out.print(answer);
         out.close();
@@ -73,15 +88,18 @@ public class WaitServlet extends HttpServlet{
     }
 
     private Integer roomIndex;
-    private Integer step1;
-    private Integer step2;
+//    private Integer step1;
+//    private Integer step2;
+    private Integer step;
 
-    private String activePlayer;
+//    private String activePlayer;
     private String answer;
+    private String type;
+    private String playerName;
 
-    private Boolean sendStart;
-    private Boolean sendFinish;
-    private Boolean readStart;
-    private Boolean readFinish;
+//    private Boolean sendStart;
+//    private Boolean sendFinish;
+//    private Boolean readStart;
+//    private Boolean readFinish;
 
 }

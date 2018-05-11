@@ -139,6 +139,45 @@ public class Data {
     //endregion
 
 
+    public static String getType() {
+        return type;
+    }
+
+    public static void setType(String type) {
+        Data.type = type;
+    }
+
+    public static String getStep() {
+        return step;
+    }
+
+    public static void setStep(String step) {
+        Data.step = step;
+    }
+
+    public static String getSend() {
+        return send;
+    }
+
+    public static void setSend(String send) {
+        Data.send = send;
+    }
+
+    public static String getReceive() {
+        return receive;
+    }
+
+    public static void setReceive(String receive) {
+        Data.receive = receive;
+    }
+
+    public static String getPlayerName() {
+        return playerName;
+    }
+
+    public static void setPlayerName(String playerName) {
+        Data.playerName = playerName;
+    }
 
     private static String firstPlayerNumber = "firstPlayer";
     private static String secondPlayerNumber = "secondPlayer";
@@ -156,5 +195,10 @@ public class Data {
     private static String readFinish = "readFinish";
     private static String step1 = "step1";
     private static String step2 = "step2";
+    private static String playerName = "playerName";
+    private static String type = "type";
+    private static String step = "step";
+    private static String send = "send";
+    private static String receive = "receive";
 
 }

@@ -17,11 +17,7 @@ public class Room {
         this.firstPlayerOrigin = firstPlayerOrigin;
         this.firstPlayerUsername = firstPlayerUsername;
         this.readFlag = false;
-
-        this.sendStart = true;
-        this.sendFinish = false;
-        this.readStart = false;
-        this.readFinish = false;
+        this.stepCount = 0;
 
         this.battleField = new BattleField(battleFieldSize);
         this.battleFieldIndex = BattleField.addBattleField(battleField);
@@ -136,21 +132,21 @@ public class Room {
         return steps.get(index);
     }
 
-    public Boolean getSendStart() {
-        return sendStart;
-    }
-
-    public Boolean getSendFinish() {
-        return sendFinish;
-    }
-
-    public Boolean getReadStart() {
-        return readStart;
-    }
-
-    public Boolean getReadFinish() {
-        return readFinish;
-    }
+//    public Boolean getSendStart() {
+//        return sendStart;
+//    }
+//
+//    public Boolean getSendFinish() {
+//        return sendFinish;
+//    }
+//
+//    public Boolean getReadStart() {
+//        return readStart;
+//    }
+//
+//    public Boolean getReadFinish() {
+//        return readFinish;
+//    }
 
     //endregion
 
@@ -241,21 +237,21 @@ public class Room {
         this.mistake = mistake;
     }
 
-    public void setSendStart(Boolean sendStart) {
-        this.sendStart = sendStart;
-    }
-
-    public void setSendFinish(Boolean sendFinish) {
-        this.sendFinish = sendFinish;
-    }
-
-    public void setReadStart(Boolean readStart) {
-        this.readStart = readStart;
-    }
-
-    public void setReadFinish(Boolean readFinish) {
-        this.readFinish = readFinish;
-    }
+//    public void setSendStart(Boolean sendStart) {
+//        this.sendStart = sendStart;
+//    }
+//
+//    public void setSendFinish(Boolean sendFinish) {
+//        this.sendFinish = sendFinish;
+//    }
+//
+//    public void setReadStart(Boolean readStart) {
+//        this.readStart = readStart;
+//    }
+//
+//    public void setReadFinish(Boolean readFinish) {
+//        this.readFinish = readFinish;
+//    }
 
     //endregion
 
@@ -300,10 +296,6 @@ public class Room {
         stepCount = 0;
     }
 
-
-
-
-
     private String firstPlayer;
     private String firstPlayerUsername;
     private String secondPlayer;
@@ -322,10 +314,10 @@ public class Room {
     private boolean readFlag;
     private boolean mistake;
 
-    private Boolean sendStart;
-    private Boolean sendFinish;
-    private Boolean readStart;
-    private Boolean readFinish;
+//    private Boolean sendStart;
+//    private Boolean sendFinish;
+//    private Boolean readStart;
+//    private Boolean readFinish;
 
     private int stepCount;
     private int rowIndex;
