@@ -34,8 +34,8 @@ public class ConnectToRoom extends HttpServlet {
                     Room.getRoom(i).setSecondPlayer(playerName);
                     Room.getRoom(i).setSecondPlayerUsername(user);
                     Room.getRoom(i).setSecondPlayerOrigin(origin);
-                    Room.getRoom(i).setReadStart(true);
-                    Room.getRoom(i).setSendStart(false);
+//                    Room.getRoom(i).setReadStart(true);
+//                    Room.getRoom(i).setSendStart(false);
                     roomIndex = i;
                     playerNumber = Data.getSecondPlayerNumber();
 //                    answer += "in for ";
@@ -59,7 +59,7 @@ public class ConnectToRoom extends HttpServlet {
 //            answer += "in noRoom ";
         }
 
-        answer += roomIndex + " " + playerNumber + " " + Room.getRoom(roomIndex).getSendStart() + " " + Room.getRoom(roomIndex).getReadStart() + " ";
+        answer += roomIndex + " " + playerNumber + " ";/* + Room.getRoom(roomIndex).getSendStart() + " " + Room.getRoom(roomIndex).getReadStart() + " ";*/
         for (int i = 0; i < size; i++) {
             answer += i + " ";
             answer += Room.getRoom(roomIndex).getBattleField().getElement(i) + " ";

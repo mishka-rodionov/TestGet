@@ -22,8 +22,8 @@ public class Room {
         this.battleField = new BattleField(battleFieldSize);
         this.battleFieldIndex = BattleField.addBattleField(battleField);
         this.steps = new ArrayList<Integer>();
-        this.steps.add(dummy);
-        this.steps.add(dummy);
+//        this.steps.add(dummy);
+//        this.steps.add(dummy);
 
         this.country = "dummy";
     }
@@ -291,6 +291,8 @@ public class Room {
     }
 
     public void clearSteps(){ steps.clear(); }
+
+    public void clearStepCount(){ stepCount = 0; }
 
     public void resetStepCount(){
         stepCount = 0;
