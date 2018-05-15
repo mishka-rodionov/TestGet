@@ -34,6 +34,9 @@ public class WaitServlet extends HttpServlet{
             if (Room.getRoom(roomIndex).getStepsSize() == 1 && Room.getRoom(roomIndex).getStepCount() == 0){
                 answer = "" + Room.getRoom(roomIndex).getValue(0);/* + " " + Room.getRoom(roomIndex).getStepsSize() + " " + Room.getRoom(roomIndex).getStepCount();*/
                 Room.getRoom(roomIndex).addStepCount();
+            }else if(Room.getRoom(roomIndex).getStepsSize() == 2 && Room.getRoom(roomIndex).getStepCount() == 0){
+                answer = "" + Room.getRoom(roomIndex).getValue(0);/* + " " + Room.getRoom(roomIndex).getStepsSize() + " " + Room.getRoom(roomIndex).getStepCount();*/
+                Room.getRoom(roomIndex).addStepCount();
             }else if (Room.getRoom(roomIndex).getStepsSize() == 2 && Room.getRoom(roomIndex).getStepCount() == 1){
                 answer = "" + Room.getRoom(roomIndex).getValue(1);/* + " " + Room.getRoom(roomIndex).getStepsSize() + " " + Room.getRoom(roomIndex).getStepCount();*/
                 Room.getRoom(roomIndex).clearStepCount();
