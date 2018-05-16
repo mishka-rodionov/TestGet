@@ -179,6 +179,54 @@ public class Data {
         Data.playerName = playerName;
     }
 
+    public static int getXsmallSize() {
+        return xsmallSize;
+    }
+
+    public static void setXsmallSize(int xsmallSize) {
+        Data.xsmallSize = xsmallSize;
+    }
+
+    public static int getSmallSize() {
+        return smallSize;
+    }
+
+    public static void setSmallSize(int smallSize) {
+        Data.smallSize = smallSize;
+    }
+
+    public static int getMediumSize() {
+        return mediumSize;
+    }
+
+    public static void setMediumSize(int mediumSize) {
+        Data.mediumSize = mediumSize;
+    }
+
+    public static int getLargeSize() {
+        return largeSize;
+    }
+
+    public static void setLargeSize(int largeSize) {
+        Data.largeSize = largeSize;
+    }
+
+    public static int getXlargeSize() {
+        return xlargeSize;
+    }
+
+    public static void setXlargeSize(int xlargeSize) {
+        Data.xlargeSize = xlargeSize;
+    }
+
+    public static int getXxlargeSize() {
+        return xxlargeSize;
+    }
+
+    public static void setXxlargeSize(int xxlargeSize) {
+        Data.xxlargeSize = xxlargeSize;
+    }
+
     private static String firstPlayerNumber = "firstPlayer";
     private static String secondPlayerNumber = "secondPlayer";
     private static String playerNameLabel = "playerName";
@@ -200,5 +248,11 @@ public class Data {
     private static String step = "step";
     private static String send = "send";
     private static String receive = "receive";
+    private static int xsmallSize = 8;
+    private static int smallSize = 12;
+    private static int mediumSize = 16;
+    private static int largeSize = 24;
+    private static int xlargeSize = 30;
+    private static int xxlargeSize = 36;
 
 }

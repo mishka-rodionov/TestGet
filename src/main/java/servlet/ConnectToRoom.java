@@ -25,7 +25,6 @@ public class ConnectToRoom extends HttpServlet {
         origin = request.getParameter(Data.getOriginLabel());
         size = Integer.parseInt(request.getParameter(Data.getSizeLabel()));
         answer = new String();
-//        answer += "room size is " + Room.getRoomsSize() + "! ";
 
         if (Room.getRoomsSize() > 0) {
             for (int i = 0; i < Room.getRoomsSize(); i++) {
@@ -34,11 +33,8 @@ public class ConnectToRoom extends HttpServlet {
                     Room.getRoom(i).setSecondPlayer(playerName);
                     Room.getRoom(i).setSecondPlayerUsername(user);
                     Room.getRoom(i).setSecondPlayerOrigin(origin);
-//                    Room.getRoom(i).setReadStart(true);
-//                    Room.getRoom(i).setSendStart(false);
                     roomIndex = i;
                     playerNumber = Data.getSecondPlayerNumber();
-//                    answer += "in for ";
                     break;
                 }
                 if (i == (Room.getRoomsSize() - 1)) {
@@ -49,24 +45,20 @@ public class ConnectToRoom extends HttpServlet {
             Room room = new Room(playerName, size, origin, user);
             roomIndex = Room.addRoom(room);
             playerNumber = Data.getFirstPlayerNumber();
-//            answer += "in noRoom ";
         }
 
         if (noRoom){
             Room room = new Room(playerName, size, origin, user);
             roomIndex = Room.addRoom(room);
             playerNumber = Data.getFirstPlayerNumber();
-//            answer += "in noRoom ";
         }
 
-        answer += roomIndex + " " + playerNumber + " ";/* + Room.getRoom(roomIndex).getSendStart() + " " + Room.getRoom(roomIndex).getReadStart() + " ";*/
+        answer += roomIndex + " " + playerNumber + " ";
         for (int i = 0; i < size; i++) {
             answer += i + " ";
             answer += Room.getRoom(roomIndex).getBattleField().getElement(i) + " ";
         }
 
-//        BattleField battleField = new BattleField(size);                      //Конструирование поля для игры
-//        int indexBattleField = BattleField.addBattleField(battleField);       //Добавление игрового поля в контейнер игровых полей.
         out.print(answer);                                          //Возвращение индекса игрового поля из контейнера игровых полей
         out.close();
     }
