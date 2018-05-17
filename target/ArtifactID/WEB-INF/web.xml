@@ -58,5 +58,15 @@
         <url-pattern>/availableUsersServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UsernameServlet</servlet-name>
+        <servlet-class>servlet.UsernameServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UsernameServlet</servlet-name>
+        <url-pattern>/usernameServlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
