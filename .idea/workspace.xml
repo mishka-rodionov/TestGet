@@ -9,7 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0811e84b-751e-42f3-adc1-c89918a3b24b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TestGet/TestGet.war" afterPath="$PROJECT_DIR$/out/artifacts/TestGet/TestGet.war" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/CountryList.java" afterPath="$PROJECT_DIR$/src/main/java/logic/CountryList.java" />
+      <change beforePath="$PROJECT_DIR$/target/ArtifactID.war" afterPath="$PROJECT_DIR$/target/ArtifactID.war" />
+      <change beforePath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/classes/logic/CountryList.class" afterPath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/classes/logic/CountryList.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logic/CountryList.class" afterPath="$PROJECT_DIR$/target/classes/logic/CountryList.class" />
     </list>
     <ignored path="TestGet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -793,12 +798,12 @@
       <workItem from="1526359215325" duration="2760000" />
       <workItem from="1526442623405" duration="6081000" />
       <workItem from="1526529390384" duration="2471000" />
-      <workItem from="1526615934846" duration="1245000" />
+      <workItem from="1526615934846" duration="1828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164143000" />
+    <option name="totallyTimeSpent" value="164726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
