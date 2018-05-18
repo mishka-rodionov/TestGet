@@ -45,7 +45,7 @@ public class CountryList {
             "Angola",
             "Anguilla",
             "Antarctica",
-            "Antigua_and-Barbuda",
+            "Antigua_and_Barbuda",
             "Argentina",
             "Armenia",
             "Aruba",
