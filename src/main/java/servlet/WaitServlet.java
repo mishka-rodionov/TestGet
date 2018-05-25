@@ -17,8 +17,15 @@ public class WaitServlet extends HttpServlet{
         PrintWriter out = response.getWriter();                                             //Получение потока, куда писать ответ
 
         roomIndex = Integer.parseInt(req.getParameter(Data.getRoomIndexLabel()));
-        type = req.getParameter(Data.getType());
-        playerName = req.getParameter(Data.getPlayerName());
+        type = "";
+        playerName = "";
+
+        if (Room.getRoom(roomIndex).isRemovingRoom()){
+            answer = "esc";
+        }else{
+            type = req.getParameter(Data.getType());
+            playerName = req.getParameter(Data.getPlayerName());
+        }
 
         if (type.equals(Data.getSend())){
             step = Integer.parseInt(req.getParameter(Data.getStep()));
@@ -27,10 +34,6 @@ public class WaitServlet extends HttpServlet{
         }
 
         if (type.equals(Data.getReceive())){
-//            answer = "temp" + " " + Room.getRoom(roomIndex).getStepsSize() + " " + Room.getRoom(roomIndex).getStepCount();
-//            if (Room.getRoom(roomIndex).getStepsSize() < 1){
-//                answer = "" + dummy;/* + " " + Room.getRoom(roomIndex).getStepsSize() + " " + Room.getRoom(roomIndex).getStepCount();*/
-//            }
             if (Room.getRoom(roomIndex).getStepsSize() == 1 && Room.getRoom(roomIndex).getStepCount() == 0){
                 answer = "" + Room.getRoom(roomIndex).getValue(0);/* + " " + Room.getRoom(roomIndex).getStepsSize() + " " + Room.getRoom(roomIndex).getStepCount();*/
                 Room.getRoom(roomIndex).addStepCount();
@@ -45,69 +48,18 @@ public class WaitServlet extends HttpServlet{
                 answer = "" + dummy;
             }
         }
-//        step1 = Integer.parseInt(req.getParameter(Data.getStep1()));
-//        step2 = Integer.parseInt(req.getParameter(Data.getStep2()));
-
-//        sendStart = Boolean.parseBoolean(req.getParameter(Data.getSendStart()));
-//        sendFinish = Boolean.parseBoolean(req.getParameter(Data.getSendFinish()));
-//        readStart = Boolean.parseBoolean(req.getParameter(Data.getReadStart()));
-//        readFinish = Boolean.parseBoolean(req.getParameter(Data.getReadFinish()));
-
-//        if (sendStart){
-//            Room.getRoom(roomIndex).addStep(step1);
-//            Room.getRoom(roomIndex).addStep(step2);
-//            answer = sendStart + " " + step1 + " " + step2;
-//        }
-//
-//        if (!sendStart && sendFinish){
-//            Room.getRoom(roomIndex).addStep(step1);
-//            Room.getRoom(roomIndex).addStep(step2);
-//            answer = sendStart + " " + step1 + " " + step2;
-//        }
-//
-//        if(readStart && (Room.getRoom(roomIndex).getStepsSize() == 2)){
-//            if (sendFinish){
-//                answer = sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
-//                Room.getRoom(roomIndex).setSendFinish(false);
-//            }else {
-//                answer = sendFinish + " " + Room.getRoom(roomIndex).getValue(0) + " " + Room.getRoom(roomIndex).getValue(1);
-//            }
-//            Room.getRoom(roomIndex).clearSteps();
-//        }else if (readStart){
-//            answer = sendFinish + " " + "-1" + " " + "-1";
-//        }
 
         out.print(answer);
         out.close();
     }
 
-    private void createAnswer() {
-        if (Room.getRoom(roomIndex).getStepsSize() > 0 && !Room.getRoom(roomIndex).isReadFlag()){
-            answer += Room.getRoom(roomIndex).getValue(0);
-            Room.getRoom(roomIndex).setReadFlag(true);
-        }else if (Room.getRoom(roomIndex).getStepsSize() > 1 && Room.getRoom(roomIndex).isReadFlag()){
-            answer += Room.getRoom(roomIndex).getValue(1);
-            Room.getRoom(roomIndex).setReadFlag(false);
-            Room.getRoom(roomIndex).clearSteps();
-        }else {
-            answer += 0 + " " + (Room.getRoom(roomIndex).isFirstPlayerActive() ? Boolean.toString(Room.getRoom(roomIndex).isFirstPlayerActive()) : Boolean.toString(Room.getRoom(roomIndex).isSecondPlayerActive()));
-        }
-    }
-
     private Integer roomIndex;
-//    private Integer step1;
-//    private Integer step2;
     private Integer step;
 
-//    private String activePlayer;
     private String answer;
     private String type;
     private String playerName;
     private int dummy = -1;
 
-//    private Boolean sendStart;
-//    private Boolean sendFinish;
-//    private Boolean readStart;
-//    private Boolean readFinish;
 
 }

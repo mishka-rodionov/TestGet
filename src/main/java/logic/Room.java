@@ -18,6 +18,7 @@ public class Room {
         this.firstPlayerUsername = firstPlayerUsername;
         this.readFlag = false;
         this.stepCount = 0;
+        this.removingRoom = false;
 
         this.battleField = new BattleField(battleFieldSize);
         this.battleFieldIndex = BattleField.addBattleField(battleField);
@@ -283,7 +284,7 @@ public class Room {
     }
 
     public static void removeRoom(int index){
-        rooms.remove(index);
+        rooms.get(index).setRemovingRoom(true);/*rooms.remove(index)*/
     }
 
     public void addStep(int index){
@@ -296,6 +297,14 @@ public class Room {
 
     public void resetStepCount(){
         stepCount = 0;
+    }
+
+    public boolean isRemovingRoom() {
+        return removingRoom;
+    }
+
+    public void setRemovingRoom(boolean removingRoom) {
+        this.removingRoom = removingRoom;
     }
 
     private String firstPlayer;
@@ -315,6 +324,7 @@ public class Room {
     private boolean playerSend;
     private boolean readFlag;
     private boolean mistake;
+    private boolean removingRoom;
 
 //    private Boolean sendStart;
 //    private Boolean sendFinish;

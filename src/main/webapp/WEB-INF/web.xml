@@ -68,5 +68,15 @@
         <url-pattern>/usernameServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>RemoveRoomServlet</servlet-name>
+        <servlet-class>servlet.RemoveRoomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RemoveRoomServlet</servlet-name>
+        <url-pattern>/removeRoomServlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
