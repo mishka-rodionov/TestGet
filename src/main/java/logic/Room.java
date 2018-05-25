@@ -284,7 +284,20 @@ public class Room {
     }
 
     public static void removeRoom(int index){
-        rooms.get(index).setRemovingRoom(true);/*rooms.remove(index)*/
+
+        rooms.get(index).setRemovingRoom(true);
+        rooms.get(index).firstPlayer = null;
+        rooms.get(index).secondPlayer = null;
+        rooms.get(index).battleFieldSize = -1;
+        rooms.get(index).firstPlayerOrigin = null;
+        rooms.get(index).firstPlayerUsername = null;
+        rooms.get(index).readFlag = false;
+        rooms.get(index).stepCount = -1;
+        rooms.get(index).removingRoom = false;
+
+        rooms.get(index).battleField = null;
+        rooms.get(index).battleFieldIndex = -1;
+        rooms.get(index).steps = null;/*rooms.remove(index)*/
     }
 
     public void addStep(int index){
