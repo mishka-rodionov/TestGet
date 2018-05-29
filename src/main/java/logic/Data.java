@@ -1,5 +1,7 @@
 package logic;
 
+import java.util.Date;
+
 public class Data {
 
     //region getters
@@ -227,10 +229,62 @@ public class Data {
         Data.xxlargeSize = xxlargeSize;
     }
 
+    public static String getUrlDB() {
+        return urlDB;
+    }
+
+    public static void setUrlDB(String urlDB) {
+        Data.urlDB = urlDB;
+    }
+
+    public static String getUserDB() {
+        return userDB;
+    }
+
+    public static void setUserDB(String userDB) {
+        Data.userDB = userDB;
+    }
+
+    public static String getPasswordDB() {
+        return passwordDB;
+    }
+
+    public static void setPasswordDB(String passwordDB) {
+        Data.passwordDB = passwordDB;
+    }
+
+    public static String getPlayersTable() {
+        return playersTable;
+    }
+
+    public static void setPlayersTable(String playersTable) {
+        Data.playersTable = playersTable;
+    }
+
+    public static String getScoresTable() {
+        return scoresTable;
+    }
+
+    public static void setScoresTable(String scoresTable) {
+        Data.scoresTable = scoresTable;
+    }
+
+    public static String getSchema() {
+        return schema;
+    }
+
+    public static void setSchema(String schema) {
+        Data.schema = schema;
+    }
+
+    public static String getCurrentDate(){
+        return new Date().toString();
+    }
+
     private static String firstPlayerNumber = "firstPlayer";
     private static String secondPlayerNumber = "secondPlayer";
     private static String playerNameLabel = "playerName";
-    private static String usernameLabel = "user";
+    private static String usernameLabel = "userDB";
     private static String sizeLabel = "size";
     private static String originLabel = "origin";
     private static String roomIndexLabel = "roomIndex";
@@ -248,6 +302,14 @@ public class Data {
     private static String step = "step";
     private static String send = "send";
     private static String receive = "receive";
+    //region DB
+    private static String urlDB = "jdbc:postgresql://localhost:5432/flagmem";
+    private static String userDB = "postgres";
+    private static String passwordDB = "mashka17";
+    private static String playersTable = "Players";
+    private static String scoresTable = "Scores";
+    private static String schema = "public";
+    //endregion
     private static int xsmallSize = 8;
     private static int smallSize = 12;
     private static int mediumSize = 16;

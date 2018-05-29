@@ -39,16 +39,6 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>ActivePlayerServlet</servlet-name>
-        <servlet-class>servlet.ActivePlayerServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ActivePlayerServlet</servlet-name>
-        <url-pattern>/activePlayer</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>AvailableUsersServlet</servlet-name>
         <servlet-class>servlet.AvailableUsersServlet</servlet-class>
     </servlet>
@@ -76,6 +66,16 @@
     <servlet-mapping>
         <servlet-name>RemoveRoomServlet</servlet-name>
         <url-pattern>/removeRoomServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StartServlet</servlet-name>
+        <servlet-class>servlet.StartServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StartServlet</servlet-name>
+        <url-pattern>/startServlet</url-pattern>
     </servlet-mapping>
 
 
