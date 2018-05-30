@@ -2,25 +2,27 @@ package service;
 
 import logic.Data;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.sql.*;
 
 public class DBManager {
     public static String createNewPlayer(String playername, String origin){
         Connection connection;
         String username = "";
+        String classEx = "";
         try {
             Class.forName("org.postgresql.Driver");                                     //
         } catch (ClassNotFoundException e) {
             System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
-            username = e.toString();
+            classEx = e.toString() + " ";
         }
         try{
             connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
             Statement statement = connection.createStatement();
 //            statement.executeUpdate("CREATE TABLE test (ID INTEGER PRIMARY KEY , Username VARCHAR(15), Playername VARCHAR (40), " +
 //                    "Origin VARCHAR (20), Date VARCHAR (40))");
-            ResultSet resultSet = statement.executeQuery("SELECT TOP 1 * FROM "+ Data.getSchema() + "."
-                    + Data.getPlayersTable() + "ORDER BY id DESC ");
+            ResultSet resultSet = statement.executeQuery("SELECT id FROM players ORDER BY id DESC ");
             Integer id;
             if (resultSet.next()){
                 id = resultSet.getInt(1);
@@ -29,17 +31,31 @@ public class DBManager {
             }
             statement.close();
             username = "user" + id;
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO " + Data.getSchema()
-                    + "." + Data.getPlayersTable() +"(id, username, playername, origin, date) VALUES ("
-                    + id++ + ", "
-                    + username + ", "
-                    + playername + ", "
-                    + origin + ", "
-                    + Data.getCurrentDate() +" )");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO players(username, playername, origin, date) VALUES ("
+            + "\'" + username + "\',"
+            + "\'" + playername + "\',"
+            + "\'" + origin + "\',"
+            + "\'" + Data.getCurrentDate() + "\'"
+            + ");");
+//                    + 2 + ", "
+//                    + username + ", "
+//                    + playername + ", "
+//                    + origin + ", "
+//                    + Data.getCurrentDate().replaceAll(" ", "_").replaceAll(":", "_") +" )");
             preparedStatement.executeUpdate();
+//            preparedStatement = connection.prepareStatement("INSERT INTO players(username, playername, origin, date) VALUES ('user2', 'kol', 'comoros', '30_05_2018');");
+//            preparedStatement.executeUpdate();
             preparedStatement.close();
         }catch (SQLException ex){
-            username = ex.toString();
+            StringWriter stringWriter = new StringWriter();
+            ex.printStackTrace(new PrintWriter(stringWriter));
+//            username = stringWriter.toString();
+//            Charset cset = Charset.forName("windows-1251");
+//            ByteBuffer buf = cset.encode(username);
+//            byte[] b = buf.array();
+//            String str = new String(b);
+//            username = str;
+
         }
         return username;
     }
