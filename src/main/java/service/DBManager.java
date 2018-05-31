@@ -59,4 +59,40 @@ public class DBManager {
         }
         return username;
     }
+
+    public static String changePlayername(String username, String playername, String origin){
+        Connection connection;
+        try {
+            Class.forName("org.postgresql.Driver");                                     //
+        } catch (ClassNotFoundException e) {
+            System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
+        }
+        try {
+            connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE players"
+            +" SET playername = " + "\'" + playername + "\'"
+            +" WHERE username = " + "\'" + username + "\'" + ";");
+//            +" WHERE username = \'user1\';");
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT playername " +
+                "FROM players " +
+                "WHERE username = "
+                + "\'" + username + "\'" + ";");
+            playername = resultSet.getString(1);
+        }catch (SQLException ex){
+            StringWriter stringWriter = new StringWriter();
+            ex.printStackTrace(new PrintWriter(stringWriter));
+            username = stringWriter.toString();
+//            Charset cset = Charset.forName("windows-1251");
+//            ByteBuffer buf = cset.encode(username);
+//            byte[] b = buf.array();
+//            String str = new String(b);
+//            username = str;
+
+        }
+        return playername;
+    }
 }

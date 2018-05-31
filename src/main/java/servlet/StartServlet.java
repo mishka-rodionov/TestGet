@@ -21,7 +21,13 @@ public class StartServlet extends HttpServlet {
         PrintWriter out = response.getWriter();                               //Получение потока, куда писать ответ
         playername = request.getParameter(Data.getPlayerNameLabel());
         origin = request.getParameter(Data.getOriginLabel());
-        username = DBManager.createNewPlayer(playername, origin);
+        username = request.getParameter(Data.getUsername());
+        if (username.equals(Data.getVirgin())){
+            username = DBManager.createNewPlayer(playername, origin);
+        }else{
+            username = DBManager.changePlayername(username, playername, origin);
+        }
+
         out.print(username);
         out.close();
     }

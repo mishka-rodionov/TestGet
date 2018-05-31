@@ -281,10 +281,26 @@ public class Data {
         return new Date().toString();
     }
 
+    public static String getVirgin() {
+        return virgin;
+    }
+
+    public static void setVirgin(String virgin) {
+        Data.virgin = virgin;
+    }
+
+    public static String getUsername() {
+        return username;
+    }
+
+    public static void setUsername(String username) {
+        Data.username = username;
+    }
+
     private static String firstPlayerNumber = "firstPlayer";
     private static String secondPlayerNumber = "secondPlayer";
     private static String playerNameLabel = "playerName";
-    private static String usernameLabel = "userDB";
+    private static String usernameLabel = "user";
     private static String sizeLabel = "size";
     private static String originLabel = "origin";
     private static String roomIndexLabel = "roomIndex";
@@ -302,14 +318,18 @@ public class Data {
     private static String step = "step";
     private static String send = "send";
     private static String receive = "receive";
+    private static String virgin = "virgin";
+    private static String username = "username";
+
     //region DB
     private static String urlDB = "jdbc:postgresql://localhost:5432/flagmem";
-    private static String userDB = "postgres";
+    private static String userDB = "mishka";
     private static String passwordDB = "mashka17";
     private static String playersTable = "Players";
     private static String scoresTable = "Scores";
     private static String schema = "public";
     //endregion
+
     private static int xsmallSize = 8;
     private static int smallSize = 12;
     private static int mediumSize = 16;

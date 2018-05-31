@@ -14,7 +14,7 @@ import java.io.PrintWriter;
  * Created by Lab1 on 12.01.2018.
  */
 public class ConnectToRoom extends HttpServlet {
-    public void doGet (HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         noRoom = false;
         response.setContentType("text/html");                                 //Установка MIME типа ответа на GET запрос
@@ -41,13 +41,13 @@ public class ConnectToRoom extends HttpServlet {
                     noRoom = true;
                 }
             }
-        }else{
+        } else {
             Room room = new Room(playerName, size, origin, user);
             roomIndex = Room.addRoom(room);
             playerNumber = Data.getFirstPlayerNumber();
         }
 
-        if (noRoom){
+        if (noRoom) {
             Room room = new Room(playerName, size, origin, user);
             roomIndex = Room.addRoom(room);
             playerNumber = Data.getFirstPlayerNumber();
