@@ -27,7 +27,8 @@ public class StartServlet extends HttpServlet {
         }else{
             username = DBManager.changePlayername(username, playername, origin);
         }
-
+//        username += " 1" + DBManager.createUsernameTable(username);
+        DBManager.createUsernameTable(username);
         out.print(username);
         out.close();
     }

@@ -95,4 +95,37 @@ public class DBManager {
         }
         return playername;
     }
+
+    public static String createUsernameTable(String username){
+        Connection connection;
+        String classEx = "";
+        try {
+            Class.forName("org.postgresql.Driver");                                     //
+        } catch (ClassNotFoundException e) {
+            System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
+            classEx = e.toString() + " ";
+        }
+        try{
+            connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("CREATE TABLE " + username
+            +      "("
+            +                "id integer NOT NULL DEFAULT nextval(\'autoincrement\'::regclass),"
+            +                "enemyusername text,"
+            +                "enemyplayername text,"
+            +                "enemyorigin text,"
+            +                "score text,"
+            +                "enemyscore text,"
+            +                "result text,"
+            +                "date text,"
+            +                "CONSTRAINT " + username + "_pkey PRIMARY KEY (id)"
+            +        ")");
+            statement.close();
+        }catch (SQLException ex){
+            StringWriter stringWriter = new StringWriter();
+            ex.printStackTrace(new PrintWriter(stringWriter));
+            classEx += ex.toString();
+        }
+        return classEx;
+    }
 }

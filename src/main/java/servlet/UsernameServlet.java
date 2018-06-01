@@ -20,14 +20,23 @@ public class UsernameServlet extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+        playerNumber = request.getParameter("playerNumber");
 
         roomIndex = Integer.parseInt(request.getParameter(Data.getRoomIndexLabel()));
-        answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer();
+        if (playerNumber.equals("firstPlayer")){
+            answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer() + " "
+            + Room.getRoom(roomIndex).getSecondPlayerUsername() + " " + Room.getRoom(roomIndex).getSecondPlayerOrigin();
+        }else{
+            answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer() + " "
+                    + Room.getRoom(roomIndex).getFirstPlayerUsername() + " " + Room.getRoom(roomIndex).getFirstPlayerOrigin();
+        }
+
 
         out.print(answer);
         out.close();
     }
 
     private Integer roomIndex;
+    private String playerNumber;
     private String answer;
 }
