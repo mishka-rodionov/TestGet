@@ -261,12 +261,12 @@ public class Data {
         Data.playersTable = playersTable;
     }
 
-    public static String getScoresTable() {
-        return scoresTable;
+    public static String getTotalTable() {
+        return totalTable;
     }
 
-    public static void setScoresTable(String scoresTable) {
-        Data.scoresTable = scoresTable;
+    public static void setTotalTable(String totalTable) {
+        Data.totalTable = totalTable;
     }
 
     public static String getSchema() {
@@ -297,6 +297,62 @@ public class Data {
         Data.username = username;
     }
 
+    public static String getEnemyUsername() {
+        return enemyUsername;
+    }
+
+    public static void setEnemyUsername(String enemyUsername) {
+        Data.enemyUsername = enemyUsername;
+    }
+
+    public static String getEnemyPlayername() {
+        return enemyPlayername;
+    }
+
+    public static void setEnemyPlayername(String enemyPlayername) {
+        Data.enemyPlayername = enemyPlayername;
+    }
+
+    public static String getEnemyOrigin() {
+        return enemyOrigin;
+    }
+
+    public static void setEnemyOrigin(String enemyOrigin) {
+        Data.enemyOrigin = enemyOrigin;
+    }
+
+    public static String getEnemyScore() {
+        return enemyScore;
+    }
+
+    public static void setEnemyScore(String enemyScore) {
+        Data.enemyScore = enemyScore;
+    }
+
+    public static String getScore() {
+        return score;
+    }
+
+    public static void setScore(String score) {
+        Data.score = score;
+    }
+
+    public static String getResult() {
+        return result;
+    }
+
+    public static void setResult(String result) {
+        Data.result = result;
+    }
+
+    public static String getDate() {
+        return date;
+    }
+
+    public static void setDate(String date) {
+        Data.date = date;
+    }
+
     private static String firstPlayerNumber = "firstPlayer";
     private static String secondPlayerNumber = "secondPlayer";
     private static String playerNameLabel = "playerName";
@@ -320,13 +376,20 @@ public class Data {
     private static String receive = "receive";
     private static String virgin = "virgin";
     private static String username = "username";
+    private static String enemyUsername = "enemyUsername";
+    private static String enemyPlayername = "enemyPlayername";
+    private static String enemyOrigin = "enemyOrigin";
+    private static String enemyScore = "enemyScore";
+    private static String score = "score";
+    private static String result = "result";
+    private static String date = "date";
 
     //region DB
     private static String urlDB = "jdbc:postgresql://localhost:5432/flagmem";
     private static String userDB = "mishka";
     private static String passwordDB = "mashka17";
-    private static String playersTable = "Players";
-    private static String scoresTable = "Scores";
+    private static String playersTable = "players";
+    private static String totalTable = "total";
     private static String schema = "public";
     //endregion
 

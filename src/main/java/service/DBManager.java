@@ -49,6 +49,7 @@ public class DBManager {
         }catch (SQLException ex){
             StringWriter stringWriter = new StringWriter();
             ex.printStackTrace(new PrintWriter(stringWriter));
+            classEx = ex.toString();
 //            username = stringWriter.toString();
 //            Charset cset = Charset.forName("windows-1251");
 //            ByteBuffer buf = cset.encode(username);
@@ -57,7 +58,7 @@ public class DBManager {
 //            username = str;
 
         }
-        return username;
+        return username;// + " " + classEx;
     }
 
     public static String changePlayername(String username, String playername, String origin){
@@ -124,6 +125,37 @@ public class DBManager {
         }catch (SQLException ex){
             StringWriter stringWriter = new StringWriter();
             ex.printStackTrace(new PrintWriter(stringWriter));
+            classEx += ex.toString();
+        }
+        return classEx;
+    }
+
+    public static String pushResultToDB(String username, String enemyusername, String enemyplayername, String enemyorigin,
+                                        String score, String enemyscore, String result, String date){
+        Connection connection;
+        String classEx = "";
+        try {
+            Class.forName("org.postgresql.Driver");                                     //
+        } catch (ClassNotFoundException e) {
+            System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
+            classEx = e.toString() + " ";
+        }
+        try{
+            connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO "+ username +"(enemyusername,"
+                    + " enemyplayername, enemyorigin, score, enemyscore, result, date) VALUES ("
+                    + "\'" + enemyusername + "\',"
+                    + "\'" + enemyplayername + "\',"
+                    + "\'" + enemyorigin + "\',"
+                    + "\'" + score + "\',"
+                    + "\'" + enemyscore + "\',"
+                    + "\'" + result + "\',"
+                    + "\'" + date + "\'"
+                    + ");");
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        }catch (SQLException ex){
+            ex.printStackTrace();
             classEx += ex.toString();
         }
         return classEx;

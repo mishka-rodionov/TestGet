@@ -78,5 +78,15 @@
         <url-pattern>/startServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>PushResultToDBServlet</servlet-name>
+        <servlet-class>servlet.PushResultToDBServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PushResultToDBServlet</servlet-name>
+        <url-pattern>/pushResultToDBServlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

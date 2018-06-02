@@ -22,18 +22,22 @@ public class StartServlet extends HttpServlet {
         playername = request.getParameter(Data.getPlayerNameLabel());
         origin = request.getParameter(Data.getOriginLabel());
         username = request.getParameter(Data.getUsername());
+        //newUsername = "beforeIf";
         if (username.equals(Data.getVirgin())){
-            username = DBManager.createNewPlayer(playername, origin);
+            //newUsername += "if";
+            newUsername = DBManager.createNewPlayer(playername, origin);
         }else{
-            username = DBManager.changePlayername(username, playername, origin);
+            //newUsername += "else";
+            newUsername = DBManager.changePlayername(username, playername, origin);
         }
 //        username += " 1" + DBManager.createUsernameTable(username);
-        DBManager.createUsernameTable(username);
-        out.print(username);
+        DBManager.createUsernameTable(newUsername);
+        out.print(newUsername);
         out.close();
     }
 
     private String playername;
     private String origin;
     private String username;
+    private String newUsername;
 }
