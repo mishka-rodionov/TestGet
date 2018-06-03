@@ -9,12 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0811e84b-751e-42f3-adc1-c89918a3b24b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.PostgreSQL_configuration.txt.kate-swp" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Data.java" afterPath="$PROJECT_DIR$/src/main/java/logic/Data.java" />
+      <change beforePath="$PROJECT_DIR$/PostgreSQL_configuration.txt" afterPath="$PROJECT_DIR$/PostgreSQL_configuration.txt" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/DBManager.java" afterPath="$PROJECT_DIR$/src/main/java/service/DBManager.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/PushResultToDBServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/PushResultToDBServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/StartServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/StartServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="TestGet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,13 +73,15 @@
       <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logic/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="391" column="31" lean-forward="false" selection-start-line="391" selection-start-column="31" selection-end-line="391" selection-end-column="31" />
+            <state relative-caret-position="203">
+              <caret line="291" column="25" lean-forward="false" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
               <folding>
                 <element signature="e#398#399#0" expanded="true" />
                 <element signature="e#434#435#0" expanded="true" />
                 <element signature="e#1394#1410#0" expanded="false" />
                 <element signature="method#setSecondPlayerNumber#0;class#Data#0" expanded="false" />
+                <element signature="e#3829#3830#0" expanded="true" />
+                <element signature="e#3862#3863#0" expanded="true" />
                 <element signature="e#5042#5043#0" expanded="true" />
                 <element signature="e#5070#5071#0" expanded="true" />
                 <element signature="e#5119#5120#0" expanded="true" />
@@ -148,19 +149,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+            <state relative-caret-position="1914">
+              <caret line="147" column="50" lean-forward="true" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1527973988083" expanded="true" signature="1062:1101" ph="SELECT id FR... players" />
-                <marker date="1527973988083" expanded="true" signature="1410:1656" ph="INSERT INTO players... " />
-                <marker date="1527973988083" expanded="true" signature="3346:3480" ph="UPDATE players... " />
-                <marker date="1527973988083" expanded="true" signature="3747:3878" ph="SELECT playe... players" />
-                <marker date="1527973988083" expanded="true" signature="5071:5651" ph="CREATE TABLE... missingValue" />
-                <marker date="1527973988083" expanded="true" signature="6720:7213" ph="INSERT INTO players... " />
+                <marker date="1528054631001" expanded="true" signature="1062:1101" ph="SELECT id FR... players" />
+                <marker date="1528054631001" expanded="true" signature="1410:1656" ph="INSERT INTO players... " />
+                <marker date="1528054631001" expanded="true" signature="1819:2084" ph="INSERT INTO players... " />
+                <marker date="1528054631001" expanded="true" signature="3290:3424" ph="UPDATE players... " />
+                <marker date="1528054631001" expanded="true" signature="3691:3822" ph="SELECT playe... players" />
+                <marker date="1528054631001" expanded="true" signature="5015:5595" ph="CREATE TABLE... missingValue" />
+                <marker date="1528054631001" expanded="true" signature="6664:7157" ph="INSERT INTO players... " />
+                <marker date="1528054631001" expanded="true" signature="8116:8252" ph="SELECT score... total" />
+                <marker date="1528054631001" expanded="true" signature="8576:8717" ph="UPDATE total... " />
               </folding>
             </state>
           </provider>
@@ -169,8 +173,8 @@
       <file leaf-file-name="PushResultToDBServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/PushResultToDBServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="29" column="52" lean-forward="false" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+            <state relative-caret-position="281">
+              <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,10 +202,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/StartServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
+            <state relative-caret-position="328">
               <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
               <folding />
             </state>
@@ -276,10 +280,10 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/ConnectToRoom.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/UsernameServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/PushResultToDBServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Data.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/DBManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/StartServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/PushResultToDBServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/DBManager.java" />
       </list>
     </option>
   </component>
@@ -867,18 +871,19 @@
       <workItem from="1527825495026" duration="7554000" />
       <workItem from="1527956948070" duration="3051000" />
       <workItem from="1527965152907" duration="5432000" />
+      <workItem from="1528053314558" duration="2823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223691000" />
+    <option name="totallyTimeSpent" value="226514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1303" height="780" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3183183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3183183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1141,7 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
           <caret line="65" column="22" lean-forward="false" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1158,7 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1260,25 +1263,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/PushResultToDBServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/StartServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="29" column="52" lean-forward="false" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="328">
+          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="391" column="31" lean-forward="false" selection-start-line="391" selection-start-column="31" selection-end-line="391" selection-end-column="31" />
+        <state relative-caret-position="203">
+          <caret line="291" column="25" lean-forward="false" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
           <folding>
             <element signature="e#398#399#0" expanded="true" />
             <element signature="e#434#435#0" expanded="true" />
             <element signature="e#1394#1410#0" expanded="false" />
             <element signature="method#setSecondPlayerNumber#0;class#Data#0" expanded="false" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3862#3863#0" expanded="true" />
             <element signature="e#5042#5043#0" expanded="true" />
             <element signature="e#5070#5071#0" expanded="true" />
             <element signature="e#5119#5120#0" expanded="true" />
@@ -1345,27 +1348,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/DBManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/PushResultToDBServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+        <state relative-caret-position="281">
+          <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1527973988083" expanded="true" signature="1062:1101" ph="SELECT id FR... players" />
-            <marker date="1527973988083" expanded="true" signature="1410:1656" ph="INSERT INTO players... " />
-            <marker date="1527973988083" expanded="true" signature="3346:3480" ph="UPDATE players... " />
-            <marker date="1527973988083" expanded="true" signature="3747:3878" ph="SELECT playe... players" />
-            <marker date="1527973988083" expanded="true" signature="5071:5651" ph="CREATE TABLE... missingValue" />
-            <marker date="1527973988083" expanded="true" signature="6720:7213" ph="INSERT INTO players... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/StartServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="1914">
+          <caret line="147" column="50" lean-forward="true" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1528054631001" expanded="true" signature="1062:1101" ph="SELECT id FR... players" />
+            <marker date="1528054631001" expanded="true" signature="1410:1656" ph="INSERT INTO players... " />
+            <marker date="1528054631001" expanded="true" signature="1819:2084" ph="INSERT INTO players... " />
+            <marker date="1528054631001" expanded="true" signature="3290:3424" ph="UPDATE players... " />
+            <marker date="1528054631001" expanded="true" signature="3691:3822" ph="SELECT playe... players" />
+            <marker date="1528054631001" expanded="true" signature="5015:5595" ph="CREATE TABLE... missingValue" />
+            <marker date="1528054631001" expanded="true" signature="6664:7157" ph="INSERT INTO players... " />
+            <marker date="1528054631001" expanded="true" signature="8116:8252" ph="SELECT score... total" />
+            <marker date="1528054631001" expanded="true" signature="8576:8717" ph="UPDATE total... " />
+          </folding>
         </state>
       </provider>
     </entry>

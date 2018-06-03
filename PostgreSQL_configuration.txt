@@ -26,7 +26,7 @@ ALTER TABLE public.players
 	
 CREATE TABLE public.total
 (
-    id integer NOT NULL DEFAULT nextval('autoincrement'::regclass),
+    id integer NOT NULL DEFAULT nextval('autoincrementForTotal'::regclass),
     username text COLLATE pg_catalog."default",
     playername text COLLATE pg_catalog."default",
     origin text COLLATE pg_catalog."default",

@@ -29,6 +29,7 @@ public class PushResultToDBServlet extends HttpServlet {
         result = request.getParameter(Data.getResult());
         date = request.getParameter(Data.getDate());
         answer = DBManager.pushResultToDB(username, enemyUsername, enemyPlayername, enemyOrigin, score, enemyScore, result, date);
+        answer += DBManager.pushTotalScore(username, score);
         out.print(answer);
         out.close();
     }

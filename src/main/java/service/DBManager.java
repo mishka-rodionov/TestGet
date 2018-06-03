@@ -37,15 +37,16 @@ public class DBManager {
             + "\'" + origin + "\',"
             + "\'" + Data.getCurrentDate() + "\'"
             + ");");
-//                    + 2 + ", "
-//                    + username + ", "
-//                    + playername + ", "
-//                    + origin + ", "
-//                    + Data.getCurrentDate().replaceAll(" ", "_").replaceAll(":", "_") +" )");
             preparedStatement.executeUpdate();
-//            preparedStatement = connection.prepareStatement("INSERT INTO players(username, playername, origin, date) VALUES ('user2', 'kol', 'comoros', '30_05_2018');");
-//            preparedStatement.executeUpdate();
             preparedStatement.close();
+            PreparedStatement totalTable = connection.prepareStatement("INSERT INTO total(username, playername, origin, score) VALUES ("
+                    + "\'" + username + "\',"
+                    + "\'" + playername + "\',"
+                    + "\'" + origin + "\',"
+                    + "\'" + 0 + "\'"
+                    + ");");
+            totalTable.executeUpdate();
+            totalTable.close();
         }catch (SQLException ex){
             StringWriter stringWriter = new StringWriter();
             ex.printStackTrace(new PrintWriter(stringWriter));
@@ -154,6 +155,44 @@ public class DBManager {
                     + ");");
             preparedStatement.executeUpdate();
             preparedStatement.close();
+        }catch (SQLException ex){
+            ex.printStackTrace();
+            classEx += ex.toString();
+        }
+        return classEx;
+    }
+
+    public static String pushTotalScore(String username, String score){
+        Connection connection;
+        String classEx = "";
+        try {
+            Class.forName("org.postgresql.Driver");                                     //
+        } catch (ClassNotFoundException e) {
+            System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
+            classEx = e.toString() + " ";
+        }
+        try{
+            connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
+            String scoreDB = "";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT score " +
+                    "FROM total " +
+                    "WHERE username = "
+                    + "\'" + username + "\'" + ";");
+            if (resultSet.next()){
+                scoreDB = resultSet.getString(1);
+            }else {
+                scoreDB = "0";
+            }
+
+            Integer newScore = Integer.parseInt(scoreDB) + Integer.parseInt(score);
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE total"
+                    +" SET score = " + "\'" + newScore + "\'"
+                    +" WHERE username = " + "\'" + username + "\'" + ";");
+//            +" WHERE username = \'user1\';");
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
         }catch (SQLException ex){
             ex.printStackTrace();
             classEx += ex.toString();
