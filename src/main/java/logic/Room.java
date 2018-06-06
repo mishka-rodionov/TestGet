@@ -19,6 +19,7 @@ public class Room {
         this.readFlag = false;
         this.stepCount = 0;
         this.removingRoom = false;
+        this.opponentIsGone = false;
 
         this.battleField = new BattleField(battleFieldSize);
         this.battleFieldIndex = BattleField.addBattleField(battleField);
@@ -320,6 +321,14 @@ public class Room {
         this.removingRoom = removingRoom;
     }
 
+    public boolean isOpponentIsGone() {
+        return opponentIsGone;
+    }
+
+    public void setOpponentIsGone(boolean opponentIsGone) {
+        this.opponentIsGone = opponentIsGone;
+    }
+
     private String firstPlayer;
     private String firstPlayerUsername;
     private String secondPlayer;
@@ -338,6 +347,7 @@ public class Room {
     private boolean readFlag;
     private boolean mistake;
     private boolean removingRoom;
+    private boolean opponentIsGone;
 
 //    private Boolean sendStart;
 //    private Boolean sendFinish;

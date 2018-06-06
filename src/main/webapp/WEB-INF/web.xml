@@ -88,5 +88,15 @@
         <url-pattern>/pushResultToDBServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>OpponentIsGoneServlet</servlet-name>
+        <servlet-class>servlet.OpponentIsGoneServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OpponentIsGoneServlet</servlet-name>
+        <url-pattern>/opponentIsGoneServlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
