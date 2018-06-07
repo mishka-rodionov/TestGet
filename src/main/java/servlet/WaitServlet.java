@@ -33,7 +33,7 @@ public class WaitServlet extends HttpServlet{
             answer = "OK";
         }
 
-        if (type.equals(Data.getReceive())){
+        if (type.equals(Data.getReceive()) && !Room.getRoom(roomIndex).isRemovingRoom()){
             if (Room.getRoom(roomIndex).getStepsSize() == 1 && Room.getRoom(roomIndex).getStepCount() == 0){
                 answer = "" + Room.getRoom(roomIndex).getValue(0);/* + " " + Room.getRoom(roomIndex).getStepsSize() + " " + Room.getRoom(roomIndex).getStepCount();*/
                 Room.getRoom(roomIndex).addStepCount();

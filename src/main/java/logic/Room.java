@@ -294,7 +294,7 @@ public class Room {
         rooms.get(index).firstPlayerUsername = null;
         rooms.get(index).readFlag = false;
         rooms.get(index).stepCount = -1;
-        rooms.get(index).removingRoom = false;
+        rooms.get(index).removingRoom = true;
 
         rooms.get(index).battleField = null;
         rooms.get(index).battleFieldIndex = -1;
