@@ -15,12 +15,20 @@ public class AvailableUsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");                                               //Установка MIME типа ответа на GET запрос
         PrintWriter out = response.getWriter();                                             //Получение потока, куда писать ответ
+        online = req.getParameter(Data.getOnline());
+        username = req.getParameter(Data.getUsername());
         xsUsers = 0;
         sUsers = 0;
         mUsers = 0;
         lUsers = 0;
         xlUsers = 0;
         xxlUsers = 0;
+
+        if (Boolean.parseBoolean(online)){
+            Room.setOnlineElement(username);
+        }else{
+            Room.clearOnlineElement(username);
+        }
 
         if (Room.getRoomsSize() > 0) {
             for (int i = 0; i < Room.getRoomsSize(); i++) {
@@ -44,7 +52,7 @@ public class AvailableUsersServlet extends HttpServlet {
                 }
             }
         }
-        answer = "" + xsUsers + " " + sUsers + " " + mUsers + " " + lUsers + " " + xlUsers + " " + xxlUsers;
+        answer = "" + xsUsers + " " + sUsers + " " + mUsers + " " + lUsers + " " + xlUsers + " " + xxlUsers + " " + Room.allOnline();
 
         out.print(answer);
         out.close();
@@ -53,6 +61,8 @@ public class AvailableUsersServlet extends HttpServlet {
     }
 
     private String answer;
+    private String online;
+    private String username;
     private Integer xsUsers;
     private Integer sUsers;
     private Integer mUsers;

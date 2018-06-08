@@ -1,9 +1,6 @@
 package logic;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Room {
 
@@ -329,6 +326,32 @@ public class Room {
         this.opponentIsGone = opponentIsGone;
     }
 
+    public static Map<String, Integer> getOnline() {
+        return online;
+    }
+
+    public static int setOnlineElement(String username) {
+        Room.online.put(username, 1);
+        return Room.online.get(username);
+    }
+
+    public static int clearOnlineElement(String username) {
+        Room.online.put(username, 0);
+        return Room.online.get(username);
+    }
+
+    public static boolean isElementExist(String username) {
+        return Room.online.containsKey(username);
+    }
+
+    public static int allOnline(){
+        int allOnline = 0;
+        for (String key : Room.online.keySet()){
+            allOnline += Room.online.get(key);
+        }
+        return allOnline;
+    }
+
     private String firstPlayer;
     private String firstPlayerUsername;
     private String secondPlayer;
@@ -349,11 +372,6 @@ public class Room {
     private boolean removingRoom;
     private boolean opponentIsGone;
 
-//    private Boolean sendStart;
-//    private Boolean sendFinish;
-//    private Boolean readStart;
-//    private Boolean readFinish;
-
     private int stepCount;
     private int rowIndex;
     private int columnIndex;
@@ -364,6 +382,7 @@ public class Room {
     private BattleField battleField;
 
     private static HashMap<String, Integer> roomNameList = new HashMap<String, Integer>();
+    private static Map<String, Integer> online = new HashMap<String, Integer>();
     private static List<Room> rooms = new ArrayList<Room>();
     private List<Integer> steps;
 }

@@ -353,6 +353,14 @@ public class Data {
         Data.date = date;
     }
 
+    public static String getOnline() {
+        return online;
+    }
+
+    public static void setOnline(String online) {
+        Data.online = online;
+    }
+
     private static String firstPlayerNumber = "firstPlayer";
     private static String secondPlayerNumber = "secondPlayer";
     private static String playerNameLabel = "playerName";
@@ -383,6 +391,7 @@ public class Data {
     private static String score = "score";
     private static String result = "result";
     private static String date = "date";
+    private static String online = "online";
 
     //region DB
     private static String urlDB = "jdbc:postgresql://localhost:5432/flagmem";
