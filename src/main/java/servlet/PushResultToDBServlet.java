@@ -22,13 +22,13 @@ public class PushResultToDBServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         username = request.getParameter(Data.getUsername());
         enemyUsername = request.getParameter(Data.getEnemyUsername());
-        enemyPlayername = request.getParameter(Data.getEnemyPlayername());
-        enemyOrigin = request.getParameter(Data.getEnemyOrigin());
+//        enemyPlayername = request.getParameter(Data.getEnemyPlayername());
+//        enemyOrigin = request.getParameter(Data.getEnemyOrigin());
         enemyScore = request.getParameter(Data.getEnemyScore());
         score = request.getParameter(Data.getScore());
         result = request.getParameter(Data.getResult());
         date = request.getParameter(Data.getDate());
-        answer = DBManager.pushResultToDB(username, enemyUsername, enemyPlayername, enemyOrigin, score, enemyScore, result, date);
+        answer = DBManager.pushResultToDB(username, enemyUsername, score, enemyScore, result, date);
         answer += DBManager.pushTotalScore(username, score);
         out.print(answer);
         out.close();

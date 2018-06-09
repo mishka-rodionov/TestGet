@@ -1,6 +1,8 @@
 package service;
 
 import logic.Data;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -15,7 +17,7 @@ public class DBManager {
             Class.forName("org.postgresql.Driver");                                     //
         } catch (ClassNotFoundException e) {
             System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
-            classEx = e.toString() + " ";
+            classEx += e.toString() + " ";
         }
         try{
             connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
@@ -39,18 +41,17 @@ public class DBManager {
             + ");");
             preparedStatement.executeUpdate();
             preparedStatement.close();
-            PreparedStatement totalTable = connection.prepareStatement("INSERT INTO total(username, playername, origin, score) VALUES ("
+            PreparedStatement totalTable = connection.prepareStatement("INSERT INTO total(username, score) VALUES ("
                     + "\'" + username + "\',"
-                    + "\'" + playername + "\',"
-                    + "\'" + origin + "\',"
                     + "\'" + 0 + "\'"
                     + ");");
             totalTable.executeUpdate();
             totalTable.close();
+            classEx += createUsernameTable(username);
         }catch (SQLException ex){
             StringWriter stringWriter = new StringWriter();
             ex.printStackTrace(new PrintWriter(stringWriter));
-            classEx = ex.toString();
+            classEx += ex.toString();
 //            username = stringWriter.toString();
 //            Charset cset = Charset.forName("windows-1251");
 //            ByteBuffer buf = cset.encode(username);
@@ -59,7 +60,7 @@ public class DBManager {
 //            username = str;
 
         }
-        return username;// + " " + classEx;
+        return username + " " + classEx;
     }
 
     public static String changePlayername(String username, String playername, String origin){
@@ -71,12 +72,12 @@ public class DBManager {
         }
         try {
             connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE players"
-            +" SET playername = " + "\'" + playername + "\'"
+            PreparedStatement changePlayersTable = connection.prepareStatement("UPDATE players"
+            +" SET playername = " + "\'" + playername + "\', origin = \'" + origin + "\'"
             +" WHERE username = " + "\'" + username + "\'" + ";");
 //            +" WHERE username = \'user1\';");
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
+            changePlayersTable.executeUpdate();
+            changePlayersTable.close();
 
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT playername " +
@@ -100,22 +101,25 @@ public class DBManager {
 
     public static String createUsernameTable(String username){
         Connection connection;
-        String classEx = "";
+        String classEx = "OKClassEx";
         try {
             Class.forName("org.postgresql.Driver");                                     //
         } catch (ClassNotFoundException e) {
             System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
-            classEx = e.toString() + " ";
+            classEx = e.toString();
         }
         try{
             connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
+            Statement sequenceStatement = connection.createStatement();
+            sequenceStatement.executeUpdate("CREATE SEQUENCE public.autoincrement" + username + ";"
+                    +"ALTER SEQUENCE public.autoincrement" + username
+                    +" OWNER TO " + Data.getUserDB() + ";");
+            sequenceStatement.close();
             Statement statement = connection.createStatement();
             statement.executeUpdate("CREATE TABLE " + username
             +      "("
-            +                "id integer NOT NULL DEFAULT nextval(\'autoincrement\'::regclass),"
+            +                "id integer NOT NULL DEFAULT nextval(\'autoincrement" + username +"\'::regclass),"
             +                "enemyusername text,"
-            +                "enemyplayername text,"
-            +                "enemyorigin text,"
             +                "score text,"
             +                "enemyscore text,"
             +                "result text,"
@@ -131,8 +135,7 @@ public class DBManager {
         return classEx;
     }
 
-    public static String pushResultToDB(String username, String enemyusername, String enemyplayername, String enemyorigin,
-                                        String score, String enemyscore, String result, String date){
+    public static String pushResultToDB(String username, String enemyusername, String score, String enemyscore, String result, String date){
         Connection connection;
         String classEx = "";
         try {
@@ -144,10 +147,8 @@ public class DBManager {
         try{
             connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO "+ username +"(enemyusername,"
-                    + " enemyplayername, enemyorigin, score, enemyscore, result, date) VALUES ("
+                    + " score, enemyscore, result, date) VALUES ("
                     + "\'" + enemyusername + "\',"
-                    + "\'" + enemyplayername + "\',"
-                    + "\'" + enemyorigin + "\',"
                     + "\'" + score + "\',"
                     + "\'" + enemyscore + "\',"
                     + "\'" + result + "\',"
@@ -198,5 +199,45 @@ public class DBManager {
             classEx += ex.toString();
         }
         return classEx;
+    }
+
+    public static JSONObject getTopTotal(){
+        Connection connection;
+        String classEx = "";
+        JSONObject topTotal = new JSONObject();
+        try {
+            Class.forName("org.postgresql.Driver");                                     //
+        } catch (ClassNotFoundException e) {
+            System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
+            classEx = e.toString() + " ";
+        }
+        try{
+            connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
+            String scoreDB = "";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * "
+                    + "FROM total "
+                    + "ORDER BY score DESC "
+                    + "FETCH FIRST 100 ROWS ONLY;");
+            JSONArray partList = new JSONArray();
+            int i = 1;
+            while (resultSet.next()){
+//                resultSet.next();
+                ResultSet rsPlayers = statement.executeQuery("SELECT playername, origin "
+                        + "FROM players "
+                        + "WHERE username = \'" + resultSet.getString(1) + "\';"
+                        );
+                partList.add(resultSet.getString(1));
+                partList.add(rsPlayers.getString(1));
+                partList.add(rsPlayers.getString(2));
+                topTotal.put(i++, partList);
+                partList.clear();
+            }
+            statement.close();
+        }catch (SQLException ex){
+            ex.printStackTrace();
+            classEx += ex.toString();
+        }
+        return topTotal;
     }
 }

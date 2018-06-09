@@ -1,7 +1,8 @@
 package servlet;
 
 import logic.Data;
-import logic.Room;
+import org.json.simple.JSONObject;
+import service.DBManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-//@WebServlet(name = "OpponentIsGoneServlet")
-public class OpponentIsGoneServlet extends HttpServlet {
+//@WebServlet(name = "TotalTopServlet")
+public class TotalTopServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -19,10 +20,12 @@ public class OpponentIsGoneServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-
-        roomIndex = Integer.parseInt(request.getParameter(Data.getRoomIndexLabel()));
-        Room.getRoom(roomIndex).setOpponentIsGone(true);
+        username = request.getParameter(Data.getUsername());
+        JSONObject topTotal = DBManager.getTopTotal();
+        out.print("");
+        out.close();
     }
 
-    private Integer roomIndex;
+    private String username;
+
 }
