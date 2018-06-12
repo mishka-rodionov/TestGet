@@ -22,10 +22,12 @@ public class TotalTopServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         username = request.getParameter(Data.getUsername());
         JSONObject topTotal = DBManager.getTopTotal();
-        out.print("");
+        answer = topTotal.toJSONString();
+        out.print(answer);
         out.close();
     }
 
     private String username;
+    private String answer;
 
 }

@@ -98,5 +98,15 @@
         <url-pattern>/opponentIsGoneServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>TotalTopServlet</servlet-name>
+        <servlet-class>servlet.TotalTopServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TotalTopServlet</servlet-name>
+        <url-pattern>/totalTopServlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

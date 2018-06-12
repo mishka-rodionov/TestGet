@@ -1,7 +1,7 @@
 CREATE SEQUENCE public.autoincrement;
 
 ALTER SEQUENCE public.autoincrement
-    OWNER TO postgres;
+    OWNER TO mishka;
 	
 //_****************************************************************************	
 
@@ -20,7 +20,7 @@ WITH (
 TABLESPACE pg_default;
 
 ALTER TABLE public.players
-    OWNER to postgres;
+    OWNER to mishka;
 	
 //_****************************************************************************	
 	
@@ -28,8 +28,6 @@ CREATE TABLE public.total
 (
     id integer NOT NULL DEFAULT nextval('autoincrementForTotal'::regclass),
     username text COLLATE pg_catalog."default",
-    playername text COLLATE pg_catalog."default",
-    origin text COLLATE pg_catalog."default",
     score text COLLATE pg_catalog."default",
     CONSTRAINT scores_pkey PRIMARY KEY (id)
 )
@@ -39,7 +37,7 @@ WITH (
 TABLESPACE pg_default;
 
 ALTER TABLE public.total
-    OWNER to postgres;
+    OWNER to mishka;
 	
 //_****************************************************************************
 
