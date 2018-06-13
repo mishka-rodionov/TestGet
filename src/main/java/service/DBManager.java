@@ -205,6 +205,7 @@ public class DBManager {
         Connection connection;
         String classEx = "";
         JSONObject topTotal = new JSONObject();
+//        topTotal.put("message", "OK");
         try {
             Class.forName("org.postgresql.Driver");                                     //
         } catch (ClassNotFoundException e) {
@@ -218,25 +219,48 @@ public class DBManager {
             ResultSet resultSet = statement.executeQuery("SELECT * "
                     + "FROM total "
                     + "ORDER BY score DESC "
-                    + "FETCH FIRST 100 ROWS ONLY;");
-            JSONArray partList = new JSONArray();
+                    + "FETCH FIRST " + 100 +" ROWS ONLY;");
+
             int i = 1;
+//            resultSet.next();
+            int  fetchSize = resultSet.getFetchSize();
+//            topTotal.put("fetchSize", fetchSize);
+//            topTotal.put("result set", resultSet.getString(2));
+//            partList.add("kolya");
+//            partList.add("vasya");
+//            partList.add("tolya");
+//            topTotal.put(1, partList);
             while (resultSet.next()){
 //                resultSet.next();
-                ResultSet rsPlayers = statement.executeQuery("SELECT playername, origin "
+                JSONArray partList = new JSONArray();
+                String usrnm = resultSet.getString(2);
+                String score = resultSet.getString(3);
+                Statement playersSt = connection.createStatement();
+                ResultSet rsPlayers = playersSt.executeQuery("SELECT playername, origin "
                         + "FROM players "
-                        + "WHERE username = \'" + resultSet.getString(1) + "\';"
+                        + "WHERE username = \'" + usrnm + "\';"
                         );
-                partList.add(resultSet.getString(1));
-                partList.add(rsPlayers.getString(1));
-                partList.add(rsPlayers.getString(2));
+//                topTotal.put("username" + i, usrnm);
+                rsPlayers.next();
+                String plrnm = rsPlayers.getString(1);
+                String orgn = rsPlayers.getString(2);
+//                topTotal.put("playername" + i, plrnm);
+//                topTotal.put("origin" + i, orgn);
+                partList.add(usrnm);
+                partList.add(plrnm);
+                partList.add(orgn);
+                partList.add(score);
                 topTotal.put(i++, partList);
-                partList.clear();
+                rsPlayers.close();
+                playersSt.close();
+//                partList.clear();
             }
+            topTotal.put("size", i);
             statement.close();
         }catch (SQLException ex){
             ex.printStackTrace();
             classEx += ex.toString();
+            topTotal.put("exception", classEx);
         }
         return topTotal;
     }
