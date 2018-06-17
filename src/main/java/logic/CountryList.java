@@ -288,7 +288,6 @@ public class CountryList {
                 "United_Arab_Emirates",
                 "United_Kingdom",
                 "United_States",
-                "Unknown",
                 "Uruguay",
                 "Ussr",
                 "Uzbekistan",
