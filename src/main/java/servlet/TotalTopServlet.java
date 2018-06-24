@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 //@WebServlet(name = "TotalTopServlet")
 public class TotalTopServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+//        String json = request.
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
