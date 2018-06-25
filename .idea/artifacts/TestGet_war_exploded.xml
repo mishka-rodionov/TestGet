@@ -10,6 +10,7 @@
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:3.0-alpha-1" />
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.2" />
           <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
+          <element id="library" level="project" name="Maven: org.json:json:20171018" />
         </element>
       </element>
       <element id="directory" name="META-INF">

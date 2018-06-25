@@ -1,13 +1,16 @@
+D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\OpponentIsGoneServlet.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\TestServlet.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\AvailableUsersServlet.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\StartServlet.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\logic\Room.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\UsernameServlet.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\WaitServlet.java
+D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\TotalTopServlet.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\logic\Data.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\logic\CountryList.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\logic\TestInteraction.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\RemoveRoomServlet.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\logic\BattleField.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\service\DBManager.java
+D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\PushResultToDBServlet.java
 D:\Work\Rodionov\temp\Project\Java\TestGet\src\main\java\servlet\ConnectToRoom.java

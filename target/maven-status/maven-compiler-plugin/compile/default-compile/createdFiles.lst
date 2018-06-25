@@ -1,4 +1,7 @@
+servlet\PushResultToDBServlet.class
+servlet\OpponentIsGoneServlet.class
 servlet\ConnectToRoom.class
+servlet\TotalTopServlet.class
 logic\Room.class
 servlet\RemoveRoomServlet.class
 servlet\TestServlet.class

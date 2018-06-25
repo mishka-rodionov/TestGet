@@ -14,7 +14,15 @@ import java.io.PrintWriter;
 //@WebServlet(name = "TotalTopServlet")
 public class TotalTopServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String json = request.
+//        BufferedReader bufferedReader = request.getReader();
+//        String json = "temp";
+//        while (bufferedReader.ready()){
+//            json += bufferedReader.readLine();
+//        }
+//        response.setContentType("text/html");
+//        PrintWriter out = response.getWriter();
+//        out.print(json);
+//        out.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

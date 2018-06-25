@@ -25,10 +25,10 @@ public class UsernameServlet extends HttpServlet {
         roomIndex = Integer.parseInt(request.getParameter(Data.getRoomIndexLabel()));
         if (playerNumber.equals("firstPlayer")){
             answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer() + " "
-            + Room.getRoom(roomIndex).getSecondPlayerUsername() + " " + Room.getRoom(roomIndex).getSecondPlayerOrigin();
+            + Room.getRoom(roomIndex).getSecondPlayerUsername() + " " + Room.getRoom(roomIndex).getSecondPlayerOrigin().replaceAll(" ", "_");
         }else{
             answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer() + " "
-                    + Room.getRoom(roomIndex).getFirstPlayerUsername() + " " + Room.getRoom(roomIndex).getFirstPlayerOrigin();
+                    + Room.getRoom(roomIndex).getFirstPlayerUsername() + " " + Room.getRoom(roomIndex).getFirstPlayerOrigin().replaceAll(" ", "_");
         }
 
 
