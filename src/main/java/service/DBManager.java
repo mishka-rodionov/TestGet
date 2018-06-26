@@ -80,7 +80,7 @@ public class DBManager {
             changePlayersTable.close();
 
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT playername " +
+            ResultSet resultSet = statement.executeQuery("SELECT username " +
                 "FROM players " +
                 "WHERE username = "
                 + "\'" + username + "\'" + ";");

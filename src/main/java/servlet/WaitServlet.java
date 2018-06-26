@@ -24,7 +24,7 @@ public class WaitServlet extends HttpServlet{
             answer = "esc";
         }else{
             type = req.getParameter(Data.getType());
-            playerName = req.getParameter(Data.getPlayerName());
+            playerName = req.getParameter(Data.getPlayername());
         }
 
         if (type.equals(Data.getSend())){

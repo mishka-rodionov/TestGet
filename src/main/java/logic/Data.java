@@ -26,8 +26,8 @@ public class Data {
         return sizeLabel;
     }
 
-    public static String getOriginLabel() {
-        return originLabel;
+    public static String getOrigin() {
+        return origin;
     }
 
     public static String getRoomIndexLabel() {
@@ -98,8 +98,8 @@ public class Data {
         Data.sizeLabel = sizeLabel;
     }
 
-    public static void setOriginLabel(String originLabel) {
-        Data.originLabel = originLabel;
+    public static void setOrigin(String origin) {
+        Data.origin = origin;
     }
 
     public static void setRoomIndexLabel(String roomIndexLabel) {
@@ -173,12 +173,12 @@ public class Data {
         Data.receive = receive;
     }
 
-    public static String getPlayerName() {
-        return playerName;
+    public static String getPlayername() {
+        return playername;
     }
 
-    public static void setPlayerName(String playerName) {
-        Data.playerName = playerName;
+    public static void setPlayername(String playername) {
+        Data.playername = playername;
     }
 
     public static int getXsmallSize() {
@@ -361,12 +361,52 @@ public class Data {
         Data.online = online;
     }
 
+    public static String getPlayerNumber() {
+        return playerNumber;
+    }
+
+    public static void setPlayerNumber(String playerNumber) {
+        Data.playerNumber = playerNumber;
+    }
+
+    public static String getFirstPlayername() {
+        return firstPlayername;
+    }
+
+    public static void setFirstPlayername(String firstPlayername) {
+        Data.firstPlayername = firstPlayername;
+    }
+
+    public static String getAnotherPlayername() {
+        return anotherPlayername;
+    }
+
+    public static void setAnotherPlayername(String anotherPlayername) {
+        Data.anotherPlayername = anotherPlayername;
+    }
+
+    public static String getAnotherPlayerUsername() {
+        return anotherPlayerUsername;
+    }
+
+    public static void setAnotherPlayerUsername(String anotherPlayerUsername) {
+        Data.anotherPlayerUsername = anotherPlayerUsername;
+    }
+
+    public static String getAnotherPlayerOrigin() {
+        return anotherPlayerOrigin;
+    }
+
+    public static void setAnotherPlayerOrigin(String anotherPlayerOrigin) {
+        Data.anotherPlayerOrigin = anotherPlayerOrigin;
+    }
+
     private static String firstPlayerNumber = "firstPlayer";
     private static String secondPlayerNumber = "secondPlayer";
-    private static String playerNameLabel = "playerName";
+    private static String playerNameLabel = "playername";
     private static String usernameLabel = "user";
     private static String sizeLabel = "size";
-    private static String originLabel = "origin";
+    private static String origin = "origin";
     private static String roomIndexLabel = "roomIndex";
     private static String activeStepLabel = "activeStep";
     private static String activePlayerLabel = "activePlayer";
@@ -377,7 +417,7 @@ public class Data {
     private static String readFinish = "readFinish";
     private static String step1 = "step1";
     private static String step2 = "step2";
-    private static String playerName = "playerName";
+    private static String playername = "playername";
     private static String type = "type";
     private static String step = "step";
     private static String send = "send";
@@ -392,6 +432,11 @@ public class Data {
     private static String result = "result";
     private static String date = "date";
     private static String online = "online";
+    private static String playerNumber = "playerNumber";
+    private static String firstPlayername = "firstPlayername";
+    private static String anotherPlayername = "anotherPlayername";
+    private static String anotherPlayerUsername = "anotherPlayerUsername";
+    private static String anotherPlayerOrigin = "anotherPlayerOrigin";
 
     //region DB
     private static String urlDB = "jdbc:postgresql://localhost:5432/flagmem";

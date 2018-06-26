@@ -2,6 +2,7 @@ package servlet;
 
 import logic.Data;
 import logic.Room;
+import org.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,17 +23,26 @@ public class UsernameServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         playerNumber = request.getParameter("playerNumber");
 
+        JSONObject jsonObject = new JSONObject();
         roomIndex = Integer.parseInt(request.getParameter(Data.getRoomIndexLabel()));
         if (playerNumber.equals("firstPlayer")){
-            answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer() + " "
-            + Room.getRoom(roomIndex).getSecondPlayerUsername() + " " + Room.getRoom(roomIndex).getSecondPlayerOrigin().replaceAll(" ", "_");
+            jsonObject.put(Data.getFirstPlayername(), Room.getRoom(roomIndex).getFirstPlayer());
+            jsonObject.put(Data.getAnotherPlayername(), Room.getRoom(roomIndex).getSecondPlayer());
+            jsonObject.put(Data.getAnotherPlayerUsername(), Room.getRoom(roomIndex).getSecondPlayerUsername());
+            jsonObject.put(Data.getAnotherPlayerOrigin(), Room.getRoom(roomIndex).getSecondPlayerOrigin());
+//            answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer() + " "
+//            + Room.getRoom(roomIndex).getSecondPlayerUsername() + " " + Room.getRoom(roomIndex).getSecondPlayerOrigin();
         }else{
-            answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer() + " "
-                    + Room.getRoom(roomIndex).getFirstPlayerUsername() + " " + Room.getRoom(roomIndex).getFirstPlayerOrigin().replaceAll(" ", "_");
+            jsonObject.put(Data.getFirstPlayername(), Room.getRoom(roomIndex).getFirstPlayer());
+            jsonObject.put(Data.getAnotherPlayername(), Room.getRoom(roomIndex).getSecondPlayer());
+            jsonObject.put(Data.getAnotherPlayerUsername(), Room.getRoom(roomIndex).getFirstPlayerUsername());
+            jsonObject.put(Data.getAnotherPlayerOrigin(), Room.getRoom(roomIndex).getFirstPlayerOrigin());
+//            answer = Room.getRoom(roomIndex).getFirstPlayer() + " " + Room.getRoom(roomIndex).getSecondPlayer() + " "
+//                    + Room.getRoom(roomIndex).getFirstPlayerUsername() + " " + Room.getRoom(roomIndex).getFirstPlayerOrigin();
         }
 
 
-        out.print(answer);
+        out.print(jsonObject.toString());
         out.close();
     }
 

@@ -10,12 +10,12 @@
 
     <servlet>
         <servlet-name>ConnectToRoomServlet</servlet-name>
-        <servlet-class>servlet.ConnectToRoom</servlet-class>
+        <servlet-class>servlet.ConnectToRoomServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>ConnectToRoomServlet</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <url-pattern>/connectToRoom</url-pattern>
     </servlet-mapping>
 
     <servlet>

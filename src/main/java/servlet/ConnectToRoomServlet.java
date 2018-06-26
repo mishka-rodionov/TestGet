@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 /**
  * Created by Lab1 on 12.01.2018.
  */
-public class ConnectToRoom extends HttpServlet {
+public class ConnectToRoomServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         noRoom = false;
@@ -22,7 +22,7 @@ public class ConnectToRoom extends HttpServlet {
 
         playerName = request.getParameter(Data.getPlayerNameLabel());
         user = request.getParameter(Data.getUsernameLabel());
-        origin = request.getParameter(Data.getOriginLabel());
+        origin = request.getParameter(Data.getOrigin());
         size = Integer.parseInt(request.getParameter(Data.getSizeLabel()));
         answer = new String();
 
