@@ -1,7 +1,6 @@
 package servlet;
 
 import logic.Data;
-import org.json.simple.JSONObject;
 import service.DBManager;
 
 import javax.servlet.ServletException;
@@ -29,9 +28,10 @@ public class TotalTopServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         username = request.getParameter(Data.getUsername());
-        JSONObject topTotal = DBManager.getTopTotal();
-        answer = topTotal.toJSONString();
-        out.print(answer);
+        org.json.JSONObject topTotal = DBManager.getTopTotal();
+        answer = topTotal.toString();
+        String plnm = topTotal.getJSONArray("" + 5).getString(1);
+        out.print(answer /*+ " " + plnm*/);
         out.close();
     }
 

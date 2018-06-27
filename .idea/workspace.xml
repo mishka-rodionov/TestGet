@@ -9,23 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0811e84b-751e-42f3-adc1-c89918a3b24b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TestGet/TestGet.war" afterPath="$PROJECT_DIR$/out/artifacts/TestGet/TestGet.war" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Data.java" afterPath="$PROJECT_DIR$/src/main/java/logic/Data.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/DBManager.java" afterPath="$PROJECT_DIR$/src/main/java/service/DBManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ConnectToRoom.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/ConnectToRoomServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/StartServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/StartServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UsernameServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/UsernameServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/WaitServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/ArtifactID.war" afterPath="$PROJECT_DIR$/target/ArtifactID.war" />
-      <change beforePath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/classes/servlet/ConnectToRoom.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/classes/servlet/StartServlet.class" afterPath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/classes/servlet/StartServlet.class" />
-      <change beforePath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/classes/servlet/UsernameServlet.class" afterPath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/classes/servlet/UsernameServlet.class" />
-      <change beforePath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/ArtifactID/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/ConnectToRoom.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/StartServlet.class" afterPath="$PROJECT_DIR$/target/classes/servlet/StartServlet.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UsernameServlet.class" afterPath="$PROJECT_DIR$/target/classes/servlet/UsernameServlet.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/TotalTopServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/TotalTopServlet.java" />
     </list>
     <ignored path="TestGet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,8 +47,8 @@
       <file leaf-file-name="TotalTopServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/TotalTopServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+            <state relative-caret-position="561">
+              <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,22 +66,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="82" column="73" lean-forward="false" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
+            <state relative-caret-position="363">
+              <caret line="248" column="55" lean-forward="false" selection-start-line="248" selection-start-column="55" selection-end-line="248" selection-end-column="55" />
               <folding>
-                <element signature="method#createUsernameTable#0;class#DBManager#0" expanded="false" />
                 <element signature="method#pushResultToDB#0;class#DBManager#0" expanded="false" />
                 <element signature="method#pushTotalScore#0;class#DBManager#0" expanded="false" />
-                <element signature="method#getTopTotal#0;class#DBManager#0" expanded="false" />
-                <marker date="1530012709955" expanded="true" signature="1132:1171" ph="SELECT id FR... players" />
-                <marker date="1530012709955" expanded="true" signature="1480:1726" ph="INSERT INTO players... " />
-                <marker date="1530012709955" expanded="true" signature="1889:2042" ph="INSERT INTO total... " />
-                <marker date="1530012709955" expanded="true" signature="3301:3464" ph="UPDATE players... " />
-                <marker date="1530012709955" expanded="true" signature="3733:3862" ph="SELECT playe... players" />
+                <marker date="1530104042482" expanded="true" signature="1108:1147" ph="SELECT id FR... players" />
+                <marker date="1530104042482" expanded="true" signature="1456:1702" ph="INSERT INTO players... " />
+                <marker date="1530104042482" expanded="true" signature="1865:2018" ph="INSERT INTO total... " />
+                <marker date="1530104042482" expanded="true" signature="3280:3443" ph="UPDATE players... " />
+                <marker date="1530104042482" expanded="true" signature="3712:3841" ph="SELECT playe... players" />
+                <marker date="1530104042482" expanded="true" signature="5379:5872" ph="CREATE TABLE... missingValue" />
+                <marker date="1530104042482" expanded="true" signature="6857:7218" ph="INSERT INTO missingValue... " />
+                <marker date="1530104042482" expanded="true" signature="8177:8313" ph="SELECT score... total" />
+                <marker date="1530104042482" expanded="true" signature="8637:8778" ph="UPDATE total... " />
+                <marker date="1530104042482" expanded="true" signature="9879:10026" ph="SELECT * FRO... total" />
+                <marker date="1530104042482" expanded="true" signature="10798:10929" ph="SELECT playe... players" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,14 +135,14 @@
       <file leaf-file-name="StartServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/StartServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="374">
               <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Data.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logic/Data.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="659">
@@ -177,18 +176,8 @@
       <file leaf-file-name="UsernameServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/UsernameServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="570">
               <caret line="44" column="39" lean-forward="false" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AvailableUsersServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/AvailableUsersServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -207,6 +196,9 @@
     <findStrings>
       <find>rooms</find>
       <find>playernumber</find>
+      <find>OKClassEx</find>
+      <find>createUsernameTable</find>
+      <find>username</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -248,15 +240,15 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/Room.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/OpponentIsGoneServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/CountryList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/TotalTopServlet.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/PushResultToDBServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/ConnectToRoomServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/StartServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/DBManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Data.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/UsernameServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/TotalTopServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/DBManager.java" />
       </list>
     </option>
   </component>
@@ -337,7 +329,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -449,8 +440,9 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -896,11 +888,12 @@
       <workItem from="1529907972057" duration="6560000" />
       <workItem from="1529985833094" duration="8788000" />
       <workItem from="1530011921923" duration="3775000" />
+      <workItem from="1530086141371" duration="6961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302882000" />
+    <option name="totallyTimeSpent" value="309843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -917,7 +910,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40658173" sideWeight="0.4915254" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3162839" sideWeight="0.49791667" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3162839" sideWeight="0.49791667" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1204,14 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/AvailableUsersServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -1225,16 +1210,6 @@
         <state relative-caret-position="578">
           <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/TotalTopServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1264,40 +1239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/StartServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/DBManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="82" column="73" lean-forward="false" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
-          <folding>
-            <element signature="method#createUsernameTable#0;class#DBManager#0" expanded="false" />
-            <element signature="method#pushResultToDB#0;class#DBManager#0" expanded="false" />
-            <element signature="method#pushTotalScore#0;class#DBManager#0" expanded="false" />
-            <element signature="method#getTopTotal#0;class#DBManager#0" expanded="false" />
-            <marker date="1530012709955" expanded="true" signature="1132:1171" ph="SELECT id FR... players" />
-            <marker date="1530012709955" expanded="true" signature="1480:1726" ph="INSERT INTO players... " />
-            <marker date="1530012709955" expanded="true" signature="1889:2042" ph="INSERT INTO total... " />
-            <marker date="1530012709955" expanded="true" signature="3301:3464" ph="UPDATE players... " />
-            <marker date="1530012709955" expanded="true" signature="3733:3862" ph="SELECT playe... players" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/UsernameServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="44" column="39" lean-forward="false" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/Data.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="659">
@@ -1323,6 +1264,62 @@
             <element signature="e#8502#8503#0" expanded="true" />
             <element signature="e#8702#8703#0" expanded="true" />
             <element signature="e#8744#8745#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/UsernameServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="44" column="39" lean-forward="false" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/StartServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/TotalTopServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/DBManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="248" column="55" lean-forward="false" selection-start-line="248" selection-start-column="55" selection-end-line="248" selection-end-column="55" />
+          <folding>
+            <element signature="method#pushResultToDB#0;class#DBManager#0" expanded="false" />
+            <element signature="method#pushTotalScore#0;class#DBManager#0" expanded="false" />
+            <marker date="1530104042482" expanded="true" signature="1108:1147" ph="SELECT id FR... players" />
+            <marker date="1530104042482" expanded="true" signature="1456:1702" ph="INSERT INTO players... " />
+            <marker date="1530104042482" expanded="true" signature="1865:2018" ph="INSERT INTO total... " />
+            <marker date="1530104042482" expanded="true" signature="3280:3443" ph="UPDATE players... " />
+            <marker date="1530104042482" expanded="true" signature="3712:3841" ph="SELECT playe... players" />
+            <marker date="1530104042482" expanded="true" signature="5379:5872" ph="CREATE TABLE... missingValue" />
+            <marker date="1530104042482" expanded="true" signature="6857:7218" ph="INSERT INTO missingValue... " />
+            <marker date="1530104042482" expanded="true" signature="8177:8313" ph="SELECT score... total" />
+            <marker date="1530104042482" expanded="true" signature="8637:8778" ph="UPDATE total... " />
+            <marker date="1530104042482" expanded="true" signature="9879:10026" ph="SELECT * FRO... total" />
+            <marker date="1530104042482" expanded="true" signature="10798:10929" ph="SELECT playe... players" />
           </folding>
         </state>
       </provider>

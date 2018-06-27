@@ -1,11 +1,10 @@
 package service;
 
 import logic.Data;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.sql.*;
 
 public class DBManager {
@@ -60,7 +59,7 @@ public class DBManager {
 //            username = str;
 
         }
-        return username + " " + classEx;
+        return username; //+ " " + classEx;
     }
 
     public static String changePlayername(String username, String playername, String origin){
@@ -201,10 +200,10 @@ public class DBManager {
         return classEx;
     }
 
-    public static JSONObject getTopTotal(){
+    public static org.json.JSONObject getTopTotal(){
         Connection connection;
         String classEx = "";
-        JSONObject topTotal = new JSONObject();
+        org.json.JSONObject topTotal = new org.json.JSONObject();
 //        topTotal.put("message", "OK");
         try {
             Class.forName("org.postgresql.Driver");                                     //
@@ -232,7 +231,7 @@ public class DBManager {
 //            topTotal.put(1, partList);
             while (resultSet.next()){
 //                resultSet.next();
-                JSONArray partList = new JSONArray();
+                org.json.JSONArray partList = new org.json.JSONArray();
                 String usrnm = resultSet.getString(2);
                 String score = resultSet.getString(3);
                 Statement playersSt = connection.createStatement();
@@ -242,15 +241,23 @@ public class DBManager {
                         );
 //                topTotal.put("username" + i, usrnm);
                 rsPlayers.next();
-                String plrnm = rsPlayers.getString(1);
+                String temp = rsPlayers.getString(1);
+                byte[] bytes = new byte[1];
+                String plrnm = new String();
+                try{
+                    bytes = temp.getBytes("UTF-8");
+                    plrnm = new String(bytes, "UTF-8");
+                }catch (UnsupportedEncodingException uns){
+                    uns.printStackTrace();
+                }
                 String orgn = rsPlayers.getString(2);
 //                topTotal.put("playername" + i, plrnm);
 //                topTotal.put("origin" + i, orgn);
-                partList.add(usrnm);
-                partList.add(plrnm);
-                partList.add(orgn);
-                partList.add(score);
-                topTotal.put(i++, partList);
+                partList.put(usrnm);
+                partList.put(plrnm);
+                partList.put(orgn);
+                partList.put(score);
+                topTotal.put("" + i++, partList);
                 rsPlayers.close();
                 playersSt.close();
 //                partList.clear();
