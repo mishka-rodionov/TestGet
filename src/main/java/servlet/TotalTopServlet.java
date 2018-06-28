@@ -25,7 +25,7 @@ public class TotalTopServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
+        response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
         username = request.getParameter(Data.getUsername());
         org.json.JSONObject topTotal = DBManager.getTopTotal();
