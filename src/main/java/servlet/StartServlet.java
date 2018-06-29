@@ -43,7 +43,7 @@ public class StartServlet extends HttpServlet {
         }
         JSONObject object = new JSONObject();
         object.put(Data.getUsername(), newUsername);
-        response.setContentType("text/html");
+        response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.print(object.toString());
         out.close();

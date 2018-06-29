@@ -39,7 +39,7 @@ public class PushResultToDBServlet extends HttpServlet {
         }catch (JSONException je){
             ans += je.toString();
         }
-        response.setContentType("text/html");
+        response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.print(answer);
         out.close();

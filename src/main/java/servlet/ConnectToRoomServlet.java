@@ -17,7 +17,7 @@ public class ConnectToRoomServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         noRoom = false;
-        response.setContentType("text/html");                                 //Установка MIME типа ответа на GET запрос
+        response.setContentType("text/html; charset=UTF-8");                                 //Установка MIME типа ответа на GET запрос
         PrintWriter out = response.getWriter();                               //Получение потока, куда писать ответ
 
         playerName = request.getParameter(Data.getPlayerNameLabel());
