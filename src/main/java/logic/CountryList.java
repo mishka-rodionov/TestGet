@@ -113,7 +113,7 @@ public class CountryList {
                 "Estonia",
                 "Ethiopia",
                 "European_Union",
-                "Ex_Yugoslavia",
+//                "Ex_Yugoslavia",
                 "Falkland_Islands",
                 "Faroe_Islands",
                 "Fiji",
