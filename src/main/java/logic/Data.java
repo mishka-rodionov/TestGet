@@ -401,6 +401,22 @@ public class Data {
         Data.anotherPlayerOrigin = anotherPlayerOrigin;
     }
 
+    public static String getTopTotal() {
+        return topTotal;
+    }
+
+    public static void setTopTotal(String topTotal) {
+        Data.topTotal = topTotal;
+    }
+
+    public static String getPersonalStat() {
+        return personalStat;
+    }
+
+    public static void setPersonalStat(String personalStat) {
+        Data.personalStat = personalStat;
+    }
+
     private static String firstPlayerNumber = "firstPlayer";
     private static String secondPlayerNumber = "secondPlayer";
     private static String playerNameLabel = "playername";
@@ -437,6 +453,8 @@ public class Data {
     private static String anotherPlayername = "anotherPlayername";
     private static String anotherPlayerUsername = "anotherPlayerUsername";
     private static String anotherPlayerOrigin = "anotherPlayerOrigin";
+    private static String topTotal = "topTotal";
+    private static String personalStat = "personalStat";
 
     //region DB
     private static String urlDB = "jdbc:postgresql://localhost:5432/flagmem";

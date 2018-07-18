@@ -28,14 +28,23 @@ public class TotalTopServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
         username = request.getParameter(Data.getUsername());
-        org.json.JSONObject topTotal = DBManager.getTopTotal();
-        answer = topTotal.toString();
-        String plnm = topTotal.getJSONArray("" + 5).getString(1);
+        type = request.getParameter(Data.getType());
+        if (type.equals(Data.getTopTotal())){
+            org.json.JSONObject topTotal = DBManager.getTopTotal();
+            answer = topTotal.toString();
+        }else if (type.equals(Data.getPersonalStat())){
+            org.json.JSONObject personalStat = DBManager.getPersonalStat(username);
+            answer = personalStat.toString();
+        }else{
+            answer = "MISTAKE !";
+        }
+//        String plnm = topTotal.getJSONArray("" + 5).getString(1);
         out.print(answer /*+ " " + plnm*/);
         out.close();
     }
 
     private String username;
+    private String type;
     private String answer;
 
 }

@@ -271,4 +271,81 @@ public class DBManager {
         }
         return topTotal;
     }
+
+    public static org.json.JSONObject getPersonalStat(String username){
+        Connection connection;
+        String classEx = "";
+        org.json.JSONObject personalStat = new org.json.JSONObject();
+//        topTotal.put("message", "OK");
+        try {
+            Class.forName("org.postgresql.Driver");                                     //
+        } catch (ClassNotFoundException e) {
+            System.out.println("Where is your PostgreSQL JDBC Driver? " + "Include in your library path!");
+            classEx = e.toString() + " ";
+        }
+        try{
+            connection = DriverManager.getConnection(Data.getUrlDB(), Data.getUserDB(), Data.getPasswordDB());
+            String scoreDB = "";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * "
+                    + "FROM " + username + " "
+                    + "ORDER BY score DESC;"
+                    /*+ "FETCH FIRST " + 100 +" ROWS ONLY;"*/);
+
+            int i = 1;
+//            resultSet.next();
+//            int  fetchSize = resultSet.getFetchSize();
+//            topTotal.put("fetchSize", fetchSize);
+//            topTotal.put("result set", resultSet.getString(2));
+//            partList.add("kolya");
+//            partList.add("vasya");
+//            partList.add("tolya");
+//            topTotal.put(1, partList);
+            while (resultSet.next()){
+//                resultSet.next();
+                org.json.JSONArray partList = new org.json.JSONArray();
+                String usrnm = resultSet.getString(2);
+                String score = resultSet.getString(3);
+                String enemyscore = resultSet.getString(4);
+                String result = resultSet.getString(5);
+//                String date = resultSet.getString(6);
+                Statement playersSt = connection.createStatement();
+                ResultSet rsPlayers = playersSt.executeQuery("SELECT playername, origin "
+                        + "FROM players "
+                        + "WHERE username = \'" + usrnm + "\';"
+                );
+                String plrnm;
+                String orgn;
+                if(rsPlayers.next()){
+                    plrnm = rsPlayers.getString(1);
+                    orgn = rsPlayers.getString(2);
+
+                }else{
+                    plrnm = "not";
+                    orgn = "got";
+                }
+
+
+                partList.put(usrnm);
+                partList.put(plrnm);
+                partList.put(orgn);
+                partList.put(score);
+                partList.put(enemyscore);
+                partList.put(result);
+//                partList.put(date);
+
+                personalStat.put("" + i++, partList);
+                rsPlayers.close();
+                playersSt.close();
+//                partList.clear();
+            }
+            personalStat.put("size", i);
+            statement.close();
+        }catch (SQLException ex){
+            ex.printStackTrace();
+            classEx += ex.toString();
+            personalStat.put("exception", classEx);
+        }
+        return personalStat;
+    }
 }
